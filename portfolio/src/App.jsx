@@ -1,35 +1,59 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
+import './index.css'
+import { div, p } from 'framer-motion/client'
+import Navbar from './components/Navbar'
+import gsap from 'gsap'
+import { useGSAP } from '@gsap/react'
+import { MouseParallax, ScrollParallax } from 'react-just-parallax'
+import About from './components/About'
+import { ScrollTrigger } from 'gsap/all'
+gsap.registerPlugin(ScrollTrigger)
+const App = () => {
 
-function App() {
-  const [count, setCount] = useState(0)
+  useGSAP( ()=>{
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    
+  const tl = gsap.timeline({
+    
+  });
+
+gsap.fromTo(".intro",{
+  opacity:0,
+  y:20,
+  scale:0.95
+},
+{
+opacity:1,
+y:0,
+delay:1.3,
+duration:1.5,
+scale:1
+})
+
+  
+  })
+    
+
+
+  
+  return(
+    <div>
+    
+     <Navbar className='z-10 h-[10vh] ' />
+     <div className=' w-full h-[90vh] flex justify-center items-center overflow-hidden z-10'>
+     
+      <MouseParallax lerpEase={0.0025} strength={0.07}  disableXAxis={true} disableZAxis={true}>
+
+       <div className=' md:text-7xl md:px-0 me intro text-center flex justify-center items-center  md:py-[330px] text-6xl 
+       leading-normal px-[5px]'>Aashin Mohammed A Z</div>
+      </MouseParallax>
+
+     </div>
+     
+    <About />
+   </div>
   )
 }
-
 export default App
