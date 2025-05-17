@@ -9,6 +9,7 @@ import { useGSAP } from '@gsap/react'
 import { MouseParallax, ScrollParallax } from 'react-just-parallax'
 import About from './components/About'
 import { ScrollTrigger } from 'gsap/all'
+import Skills from './components/Skills'
 gsap.registerPlugin(ScrollTrigger)
 const App = () => {
 
@@ -53,6 +54,7 @@ scale:1
      </div>
      
     <About />
+    <Skills />
    </div>
   )
 }
