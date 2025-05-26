@@ -3,6 +3,7 @@ import { skillpng } from '../constants';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/all';
+import { delay } from 'motion';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -43,11 +44,14 @@ const Skills = () => {
     // Rotation animations
     gsap.to(skillRef.current, {
       opacity: 1,
+      x:0,
+      y:0,
       rotation: 360,
       scrollTrigger: {
         trigger: skillRef.current,
         start: 'top 80%',
         toggleActions: 'play pause resume pause',
+        
       },
       duration: 40,
       repeat: -1,
@@ -62,11 +66,31 @@ const Skills = () => {
         trigger: skillRef.current,
         start: 'top 80%',
         toggleActions: 'play pause resume pause',
+        
       },
       duration: 40,
       repeat: -1,
       ease: 'linear',
     });
+
+    const t1 = gsap.timeline({ 
+      
+      });
+
+    t1.fromTo('.title',{
+      autoAlpha:0,
+      y:100,
+      duration:2,
+      delay:2,},{
+        autoAlpha:1,
+      y:100,
+      duration:2,
+      delay:2
+      }
+
+
+    )
+
 
     // Timeline animation temporarily disabled
     /*
@@ -89,8 +113,8 @@ const Skills = () => {
   }, { scope: skillRef });
 
   return (
-    <section className="relative h-[100vh]">
-      <div className="absolute top-[40vh] me text-[120px] w-full h-auto flex items-center justify-center m-auto -ml-2 title">
+    <section className="relative h-[100vh] overflow-hidden">
+      <div className="top-[40vh] me text-[120px] w-full h-auto flex items-center justify-center m-auto -ml-2 title">
         Skills
       </div>
 
@@ -105,7 +129,7 @@ const Skills = () => {
       ))}
 
       <div
-        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 md:w-[600px] md:h-[600px] w-[320px] h-[320px] transform origin-center"
+        className="  absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 md:w-[600px] md:h-[600px] w-[320px] h-[320px]   "
         ref={skillRef}
       >
         <div className="skillpage normText md:mt-50 md:flex justify-center items-center ml-[1cm] transform origin-center">
@@ -113,7 +137,7 @@ const Skills = () => {
             {skillpng.map((each) => (
               <li
                 key={each.id}
-                className="absolute w-[60px] h-[60px]"
+                className="absolute w-[70px] h-[70px]"
                 style={{ transform: 'translate(-50%, -50%)' }}
               >
                 <img

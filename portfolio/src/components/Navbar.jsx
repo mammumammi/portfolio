@@ -16,7 +16,7 @@ const Navbar = () => {
     })
     })
   return (
-    <div className='w-full py-5 flex justify-center items-center'>
+    <div className=' py-5 flex justify-center items-center fixed z-50 bgcolor left-1/2 transform -translate-x-1/2'>
         <nav className='flex space-x-18 nav sd:text-5'> 
             <div className=''>About</div>
             <div>Projects</div>
