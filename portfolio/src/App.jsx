@@ -39,7 +39,7 @@ const App = () => {
       start:width > 768 ? '85% 60%' : '40% 30%',
       end:width >768 ? '130% 80%' : '70% 70%',
       scrub:0.7,
-      markers:true
+      
     }
   })
   scrollTimeline.to(introRef.current,{
