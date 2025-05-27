@@ -8,11 +8,13 @@ export const animateWithGsap = (target,animationProps,scrollProps) => {
         ...animationProps,
         scrollTrigger:{
             trigger:target,
-            toggleActions:'play complete none reverse',
-            start:'85% 60%',
-            end:'130% 80%',
+            toggleActions:'play none reverse reverse',
+            
+            
+            
             ...scrollProps,
-            immediateRender:true,
+            immediateRender:false,
+            
         }
 
     })
@@ -29,6 +31,8 @@ export const animateWithGsapTimeline = (timeline,target,animationProps,scrollPro
             
             
             ...scrollProps,
+            
+            immediateRender:false,
             
         }
 

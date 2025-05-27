@@ -8,14 +8,28 @@ import { useInView } from 'react-intersection-observer'
 import { Cursor, useTypewriter } from 'react-simple-typewriter'
 import { animateWithGsapTimeline } from './animation'
 
+
 gsap.registerPlugin(ScrollTrigger)
 const About = () => {
   const [width, setWidth] = useState(window.innerWidth);
+
   
   useGSAP( ()=>{
-    const t1=gsap.timeline({});
+    const tl=gsap.timeline();
 
-    animateWithGsapTimeline(t1,'.about',{opacity:1,duration:2},{start:'15% 60%',end:'50% 80%',scrub:0.9,markers:true})
+    width > 768 ?  animateWithGsapTimeline(tl,'.about',{ y:-50,opacity:1,duration:2},{start:'30% 80%',end:'50% 80%',scrub:0.6}) :
+    animateWithGsapTimeline(tl,'.about',{y:-20,opacity:1,duration:2},{start:'20% 60%',end:'45% 80%',scrub:0.9,})
+    
+    if (width < 768){
+    
+      animateWithGsapTimeline(tl,'img',{opacity:1,duration:10},{start:'45% 80%',end:'90% 80%',scrub:0.6}) 
+    }
+
+    if (width < 768){
+    
+      animateWithGsapTimeline(tl,'.content',{opacity:1,duration:10},{start:'35% 80%',end:'50% 80%',scrub:0.6}) 
+    }
+
   })
  
   
@@ -25,19 +39,19 @@ const About = () => {
   
 
   return (
-    <section className='about  w-full' style={{opacity:0}}>
-        <div className='w-full h-auto me py-[50px] md:text-9xl text-7xl flex items-center justify-center '>About</div>
+    <section className='w-full' >
+        <div className='w-full h-auto me py-[50px] md:text-9xl text-7xl flex items-center justify-center about ' style={{opacity:0}}>About</div>
         <div className='flex flex-col md:flex-row'>
 
         <div className=' md:w-[30vw] w-[70vw] md:top-0  transform translate-x-[20%] translate-y-1/8 md:transform-none md:translate-0'>
-        <img src="../public/me.jpg" alt="" className='px-5 mb-5 w-auto h-auto' />
+        <img src="../public/me.jpg" alt="" className='px-5 mb-5 w-auto h-auto opacity-0' />
        
         </div>
         
-        <div className='md:px-2  md:flex md:flex-1/2 md:-mt-2 flex-col md:flex-row ml-5 md:ml-0 mr-5 mt-[22.5vh]'> 
+        <div className='md:px-2  md:flex md:flex-1/2 md:-mt-2 flex-col md:flex-row ml-5 md:ml-0 mr-5 '> 
 
         
-        <div className='content normText text-1xl md:mr-5 md:w-[40vw] '   >Diving into the world of coding from 2021,From my 12th standard of starting Python to creating responsive websites on React.<br/>
+        <div className='content normText text-1xl md:mr-5 md:w-[40vw] opacity-0  mt-9'   >Diving into the world of coding from 2021,From my 12th standard of starting Python to creating responsive websites on React.<br/>
         <br/>Just A Guy aiming to be Ever-learning.◡̈<br/><br/>I love to create websites that gives immersive experience to the users.I love to learn new technologies and kill myself in the process.<br/><br/>Love to Get my brains plugged out into finding that one semicolumn i missed.<br/><br/>Looking to get myself on Blockchain Technology and Artificial Intelligence because Why not.<br/><br/>Has a thing to create stuffs that i visualise on my mind especially websites!!.
         </div>
         {width < 768 ? <div className='me text-5xl flex items-center justify-center my-12'>Education</div> : null}

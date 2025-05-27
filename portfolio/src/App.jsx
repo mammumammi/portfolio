@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './index.css'
@@ -14,16 +14,18 @@ import { animateWithGsap, animateWithGsapTimeline } from './components/animation
 gsap.registerPlugin(ScrollTrigger)
 
 const App = () => {
+  const introRef = useRef(null);
   const [width, setWidth] = useState(window.innerWidth);
   
   useGSAP( ()=>{
-
     
-  const tl = gsap.timeline({ 
+    const tl = gsap.timeline({ 
+   });
     
-  });
+  
 
-  tl.to(".intro",
+
+  tl.to(introRef.current,
   {
   opacity:1,
   y:30,
@@ -32,12 +34,11 @@ const App = () => {
   scale:1
   })
   
-  width > 768 ? animateWithGsapTimeline(tl,'.intro',{y:10,opacity:0,scale:1.5,duration:2,},{
+  width > 768 ? animateWithGsapTimeline(tl,introRef.current,{y:10,opacity:0,scale:1.5,duration:2,},{
             start:'85% 60%',
-            end:'130% 80%',scrub:0.9,}): animateWithGsapTimeline(tl,'.intro',{y:10,opacity:0,duration:2,scale:1.5},{start:'bottom 50%',end:'180% 90%',scrub:0.9}) ;
-
-  
+            end:'130% 80%',scrub:0.6}): animateWithGsapTimeline(tl,introRef.current,{y:10,opacity:0,duration:2,scale:1.5},{start:'100% 30%',end:'150% 70%',scrub:0.9,markers:true}) ;
   })
+  
     
 
 
@@ -46,14 +47,14 @@ const App = () => {
     <div>
     
      <Navbar />
-     <div className=' w-full h-[90vh] flex justify-center items-center overflow-hidden z-10'>
+     <div className=' w-full md:h-[90vh] h-[60vh] flex justify-center items-center overflow-hidden z-10'>
      
       <MouseParallax lerpEase={0.0025} strength={0.07}  disableXAxis={true} disableZAxis={true}>
 
        <div className=' 
-       text-5xl top-1/2 md:top-0
-       md:text-7xl md:px-0 me intro text-center flex justify-center items-center  md:py-[330px] 
-       leading-normal px-[5px]' style={{opacity:0}}>Aashin Mohammed A Z</div>
+       text-5xl top-1/3 md:top-0
+       md:text-7xl md:px-0 me intro text-center flex justify-center items-center py-0 md:py-[330px] 
+       leading-normal px-[5px]' style={{opacity:0}} ref={introRef}>Aashin Mohammed A Z</div>
       </MouseParallax>
 
      </div>

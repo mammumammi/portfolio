@@ -17,8 +17,10 @@
   }
 
  .navbg{
+  background-color: #1813353f;
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur();
+  -webkit-backdrop-filter: blur(10px);
+  border:#190e2d solid 0.5px;
  }
   .text{
     font-family: "Major Mono Display", monospace;
