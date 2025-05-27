@@ -11,7 +11,7 @@ const Navbar = () => {
     {
         y:0,
         opacity:1,
-        delay:2.5,
+        delay:1.5,
         duration:0.8
     })
     })

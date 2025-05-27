@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './index.css'
 import { div, p } from 'framer-motion/client'
 import Navbar from './components/Navbar'
@@ -11,6 +10,7 @@ import About from './components/About'
 import { ScrollTrigger } from 'gsap/all'
 import Skills from './components/Skills'
 import { animateWithGsap, animateWithGsapTimeline } from './components/animation'
+
 gsap.registerPlugin(ScrollTrigger)
 
 const App = () => {
@@ -29,14 +29,26 @@ const App = () => {
   {
   opacity:1,
   y:30,
-  delay:1.3,
+  delay:0.3,
   duration:1.5,
   scale:1
   })
-  
-  width > 768 ? animateWithGsapTimeline(tl,introRef.current,{y:10,opacity:0,scale:1.5,duration:2,},{
-            start:'85% 60%',
-            end:'130% 80%',scrub:0.6}): animateWithGsapTimeline(tl,introRef.current,{y:10,opacity:0,duration:2,scale:1.5},{start:'100% 30%',end:'150% 70%',scrub:0.9,markers:true}) ;
+  const scrollTimeline = gsap.timeline({
+    scrollTrigger:{
+      trigger:introRef.current,
+      start:width > 768 ? '85% 60%' : '40% 30%',
+      end:width >768 ? '130% 80%' : '70% 70%',
+      scrub:0.7,
+      markers:true
+    }
+  })
+  scrollTimeline.to(introRef.current,{
+    y: 10,
+    opacity: 0,
+    scale: 1.5,
+    duration: 2,
+    ease: 'none',
+  })
   })
   
     
@@ -61,6 +73,7 @@ const App = () => {
      
     <About />
     <Skills />
+  
    </div>
   )
 }

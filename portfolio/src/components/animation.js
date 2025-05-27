@@ -27,11 +27,7 @@ export const animateWithGsapTimeline = (timeline,target,animationProps,scrollPro
         scrollTrigger:{
             trigger:target,
             toggleActions:'play none reverse reverse',
-            
-            
-            
             ...scrollProps,
-            
             immediateRender:false,
             
         }

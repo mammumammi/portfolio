@@ -1,15 +1,16 @@
 import { useGSAP } from '@gsap/react'
-import { motion } from 'framer-motion'
+import { motion, stagger } from 'framer-motion'
 import { div } from 'framer-motion/client'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 import React, { useEffect, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
-import { Cursor, useTypewriter } from 'react-simple-typewriter'
 import { animateWithGsapTimeline } from './animation'
+import { SplitText } from 'gsap/SplitText'
 
 
-gsap.registerPlugin(ScrollTrigger)
+
+gsap.registerPlugin(ScrollTrigger,SplitText)
 const About = () => {
   const [width, setWidth] = useState(window.innerWidth);
 
@@ -17,18 +18,42 @@ const About = () => {
   useGSAP( ()=>{
     const tl=gsap.timeline();
 
-    width > 768 ?  animateWithGsapTimeline(tl,'.about',{ y:-50,opacity:1,duration:2},{start:'30% 80%',end:'50% 80%',scrub:0.6}) :
+    width > 768 ?  animateWithGsapTimeline(tl,'.wholepage',{ y:-50,opacity:1,duration:2,stagger:0.5},{start:'30% 80%',end:'50% 80%',scrub:0.6}) :
     animateWithGsapTimeline(tl,'.about',{y:-20,opacity:1,duration:2},{start:'20% 60%',end:'45% 80%',scrub:0.9,})
+
+    
     
     if (width < 768){
     
-      animateWithGsapTimeline(tl,'img',{opacity:1,duration:10},{start:'45% 80%',end:'90% 80%',scrub:0.6}) 
+      animateWithGsapTimeline(tl,'img',{opacity:1,duration:10},{start:'55% 80%',end:'90% 80%',scrub:0.3}) 
     }
 
     if (width < 768){
     
       animateWithGsapTimeline(tl,'.content',{opacity:1,duration:10},{start:'35% 80%',end:'50% 80%',scrub:0.6}) 
     }
+
+    let split=SplitText.create(".content",{
+      type:"chars"
+    })
+    if (width<768){
+    gsap.to(split.chars,{
+      color:"#EABDE6",
+      scale:1.2,
+      y:-5,
+      ease:"power4.in",
+      duration:5,
+      stagger:0.5,
+      scrollTrigger:{
+        trigger:'.content',
+        start:'top 8%',
+        end:"200% 70%",
+        scrub:0.7,
+      
+        pin:true,
+      }
+    })
+  }
 
   })
  
@@ -39,19 +64,19 @@ const About = () => {
   
 
   return (
-    <section className='w-full' >
-        <div className='w-full h-auto me py-[50px] md:text-9xl text-7xl flex items-center justify-center about ' style={{opacity:0}}>About</div>
+    <section className={` wholepage w-full ${width>768 ? 'opacity-0' : ''}`} >
+        <div className={`w-full h-auto me py-[50px] md:text-9xl text-7xl flex items-center justify-center about ${width<768 ? 'opacity-0' : ''}  `} >About</div>
         <div className='flex flex-col md:flex-row'>
 
-        <div className=' md:w-[30vw] w-[70vw] md:top-0  transform translate-x-[20%] translate-y-1/8 md:transform-none md:translate-0'>
-        <img src="../public/me.jpg" alt="" className='px-5 mb-5 w-auto h-auto opacity-0' />
+        <div className='md:w-[30vw] w-[70vw] md:top-0  transform translate-x-[20%] translate-y-1/8 md:transform-none md:translate-0'>
+        <img src="../public/me.jpg" alt="" className={`px-5 mb-5 w-auto h-auto ${width<768? 'opacity-0':''}`} />
        
         </div>
         
         <div className='md:px-2  md:flex md:flex-1/2 md:-mt-2 flex-col md:flex-row ml-5 md:ml-0 mr-5 '> 
 
         
-        <div className='content normText text-1xl md:mr-5 md:w-[40vw] opacity-0  mt-9'   >Diving into the world of coding from 2021,From my 12th standard of starting Python to creating responsive websites on React.<br/>
+        <div className={`content normText text-1xl md:mr-5 md:w-[40vw] ${width <768 ? 'opacity-0' :''}  mt-9 md:mt-0`}   >Diving into the world of coding from 2021,From my 12th standard of starting Python to creating responsive websites on React.<br/>
         <br/>Just A Guy aiming to be Ever-learning.◡̈<br/><br/>I love to create websites that gives immersive experience to the users.I love to learn new technologies and kill myself in the process.<br/><br/>Love to Get my brains plugged out into finding that one semicolumn i missed.<br/><br/>Looking to get myself on Blockchain Technology and Artificial Intelligence because Why not.<br/><br/>Has a thing to create stuffs that i visualise on my mind especially websites!!.
         </div>
         {width < 768 ? <div className='me text-5xl flex items-center justify-center my-12'>Education</div> : null}
