@@ -4,10 +4,11 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/all';
 import { delay } from 'motion';
-
+import dot from '../assets/dot.svg';
 gsap.registerPlugin(ScrollTrigger);
 
 const Skills = () => {
+  const [width, setWidth] = useState(window.innerWidth);
   const circleRef = useRef(null);
   const skillRef = useRef(null);
   const [radius, setRadius] = useState(160);
@@ -15,7 +16,7 @@ const Skills = () => {
   // Responsive radius update
   useEffect(() => {
     const handleResize = () => {
-      setRadius(window.innerWidth > 768 ? 350 : 160);
+      setRadius(window.innerWidth > 768 ? 340 : 130);
     };
     handleResize();
     window.addEventListener('resize', handleResize);
@@ -112,13 +113,127 @@ const Skills = () => {
     */
   }, { scope: skillRef });
 
-  return (
-    <section className="relative h-[100vh] overflow-hidden">
-      <div className="top-[40vh] me text-[120px] w-full h-auto flex items-center justify-center m-auto -ml-2 title">
-        Skills
-      </div>
+  useEffect( ()=> {
 
-      {skillpng.map((each) => (
+    const tl= gsap.timeline({repeat:-1,});
+    const t2= gsap.timeline({repeat:-1,});
+    const t3= gsap.timeline({repeat:-1,});
+    const t4= gsap.timeline({repeat:-1,});
+    const t5= gsap.timeline({repeat:-1,});
+    const t6= gsap.timeline({repeat:-1,});
+
+    
+
+    tl.set('.row1',{
+      
+      xPercent:-130,rotateX:45,
+      rotateY:45,
+      rotateZ:-5,
+    })
+    .to('.row1',{
+      rotateX:45,
+      rotateY:45,
+      
+      xPercent:-30,
+      ease:"linear",
+      duration:10,
+    })
+
+    t2.set('.row2',{
+      
+      xPercent:-130,rotateX:45,
+      rotateY:45,
+      rotateZ:-5,
+    })
+    .to('.row2',{
+      rotateX:45,
+      rotateY:45,
+      rotateZ:-5,
+      xPercent:-30,
+      ease:"linear",
+      duration:10,
+      
+    })
+
+    t3.set('.row3',{
+      
+      xPercent:-130,rotateX:45,
+      rotateY:45,
+      rotateZ:-5,
+    })
+    .to('.row3',{
+      rotateX:45,
+      rotateY:45,
+      rotateZ:-5,
+      xPercent:-30,
+      ease:"linear",
+      duration:10,
+      
+    })
+
+    t4.fromTo('.row4',{
+      
+      xPercent:-130,rotateX:45,
+      rotateY:45,
+      rotateZ:-5,
+      color:'#9b9b9bb3'
+    },{
+      rotateX:45,
+      rotateY:45,
+      rotateZ:-5,
+      xPercent:-30,
+      ease:"linear",
+     
+      duration:10,
+      
+    }).to('.row4',{
+      color:'#ffc6fe',
+      duration:3,
+    },2)
+
+    t5.set('.row5',{
+      
+      xPercent:-130,rotateX:45,
+      rotateY:45,
+      rotateZ:-5,
+    })
+    .to('.row5',{
+      rotateX:45,
+      rotateY:45,
+      rotateZ:-5,
+      xPercent:-30,
+      ease:"linear",
+      duration:10,
+      
+    })
+
+    t6.set('.row6',{
+      
+      xPercent:-130,rotateX:45,
+      rotateY:45,
+      rotateZ:-5,
+    })
+    .to('.row6',{
+      rotateX:45,
+      rotateY:45,
+      rotateZ:-5,
+      xPercent:-30,
+      ease:"linear",
+      duration:10,
+      
+    })
+
+
+  })
+
+  return (
+    <section className="relative ">
+      <div className='  md:h-[100vh]  overflow-hidden'>
+      {width > 768 ? <div className="top-[40vh] me text-[120px] w-full h-auto flex items-center justify-center m-auto -ml-2 title">
+        Skills
+      </div>  : <div className='me text-[70px] flex items-center mx-auto justify-center mt-[100px]' >Skills</div>}
+      
+      {width > 768 && <>{skillpng.map((each) => (
         <p
           key={each.id}
           id={each.id}
@@ -129,7 +244,7 @@ const Skills = () => {
       ))}
 
       <div
-        className="  absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 md:w-[600px] md:h-[600px] w-[320px] h-[320px]   "
+        className="  absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 md:w-[600px] md:h-[600px] w-[320px] h-[320px]  z-10 "
         ref={skillRef}
       >
         <div className="skillpage normText md:mt-50 md:flex justify-center items-center ml-[1cm] transform origin-center">
@@ -143,13 +258,111 @@ const Skills = () => {
                 <img
                   src={each.icon}
                   alt={each.title}
-                  className="icon w-full h-full flex items-center justify-center rounded-xl"
+                  className="icon md:w-full md:h-full w-[40px] flex items-center justify-center rounded-xl "
                 />
               </li>
             ))}
           </ul>
         </div>
+      </div></>}    
+      
       </div>
+      {width < 768 ? <div className=' text-[70px] -space-y-3 h-[100dvh] overflow-hidden mainrow pt-10'>
+        <div className='flex flex-row row1 '>
+          <p className='font-[CDTRegular] font-extraLight '>Python</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Java</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Python</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Java</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Python</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Java</p>
+          <img src={dot} className='w-[80px]' alt="" />
+
+        </div>
+        
+        <div className='flex flex-row row2'>
+        <p className='font-[CDTRegular] font-extraLight '>C</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C++</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C++</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C++</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C++</p>
+          <img src={dot} className='w-[80px]' alt="" />
+        </div>
+        <div className='flex flex-row row3'>
+        <p className='font-[CDTRegular] font-extraLight '>MySQL</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Solidity</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>MySQL</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Solidity</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>MySQL</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Solidity</p>
+          <img src={dot} className='w-[80px]' alt="" />
+        </div>
+        <div className='flex flex-row row4'>
+        <p className='font-[CDTRegular] font-extraLight '>HTML</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>CSS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>JavaScript</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>HTML</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>CSS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>JavaScript</p>
+          <img src={dot} className='w-[80px]' alt="" />
+
+        </div>
+        <div className='flex flex-row row5'>
+        <p className='font-[CDTRegular] font-extraLight '>React.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Three.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>React.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Three.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>React.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Three.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+        </div>
+        <div className='flex flex-row row6'>
+        <p className='font-[CDTRegular] font-extraLight '>Leadership</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Presentation</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Leadership</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Presentation</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Leadership</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Presentation</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          
+        </div>
+        
+        
+      </div> : <div></div>}
     </section>
   );
 };

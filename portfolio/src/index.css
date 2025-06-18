@@ -2,13 +2,29 @@
 
 
 @theme{
+  --color-newgrey : #9b9b9bb3 ;
+}
 
+@font-face {
+  font-family: 'CDTRegular';
+  src: url('./assets/Fonts/CDTBivaque-Regular.ttf');
+  font-weight: 300;
+  font-style: normal;
+  
+}
+
+@font-face {
+  font-family: 'CDTSlanted';
+  src: url('./assets/Fonts/CDTBivaque-Slanted.ttf');
+  font-weight: 300;
+  font-style:normal
 }
 
 @layer base{
 
   body{
     background-color: #191919;
+    
       
 
     color: #F5EEDC;
@@ -19,6 +35,8 @@
   .playcontent{
     color: #F5EEDC;
   }
+
+  
 
  .navbg{
   background-color: #1813353f;
