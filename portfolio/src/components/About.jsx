@@ -130,7 +130,7 @@ const About = () => {
         <div className='flex flex-col md:flex-row'>
 
         <div className='md:w-[30vw] w-[70vw] md:top-0  transform translate-x-[20%] translate-y-1/8 md:transform-none md:translate-0'>
-        <img src="../public/me.jpg" alt="" className={`px-5 mb-5 w-auto h-auto ${width<768? 'opacity-0':''}`} />
+        <img src="/public/me.jpg" alt="" className={`px-5 mb-5 w-auto h-auto ${width<768? 'opacity-0':''}`} />
        
         </div>
         
