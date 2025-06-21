@@ -123,101 +123,101 @@ const Skills = () => {
         trigger:'mainrowmain',
         start:'95% 90%',
         toggleActions:'play none resume reverse',
-        markers:true
+        
       }
     })
 
     const tl1= gsap.timeline({scrollTrigger: {
       trigger: '.mainrowmain',
-      start: '65% 80%',
-      end:'300% 80%',
+      start: '55% 80%',
+      end:'300% 120%',
   
-      toggleActions: 'play none resume pause',
+      toggleActions: 'play none none pause',
      
       
     },repeat:-1,});
     const t2= gsap.timeline({scrollTrigger: {
       trigger: '.mainrowmain',
-      start: '65% 80%',
-      end:'300% 80%',
-      toggleActions: 'play none resume pause',
+      start: '55% 80%',
+      end:'300% 120%',
+      toggleActions: 'play none none none',
       
     },repeat:-1,});
     const t3= gsap.timeline({scrollTrigger: {
       trigger: '.mainrowmain',
-      start: '65% 80%',
-      end:'300% 80%',
-      toggleActions: 'play none resume pause',
+      start: '55% 80%',
+      end:'300% 120%',
+      toggleActions: 'play none none none',
       
     },repeat:-1,});
     const t4= gsap.timeline({scrollTrigger: {
       trigger: '.mainrowmain',
-      start: '65% 80%',
-      end:'300% 80%',
-      toggleActions: 'play none resume pause',
+      start: '55% 80%',
+      end:'300% 120%',
+      toggleActions: 'play none none none',
       
     },repeat:-1,});
     const t5= gsap.timeline({scrollTrigger: {
       trigger: '.mainrowmain',
-      start: '65% 80%',
-      end:'300% 80%',
-      toggleActions: 'play none resume pause',
+      start: '55% 80%',
+      end:'300% 120%',
+      toggleActions: 'play none none none',
       
     },repeat:-1,});
     const t6= gsap.timeline({scrollTrigger: {
       trigger: '.mainrowmain',
-      start: '65% 80%',
-      end:'300% 80%',
-      toggleActions: 'play none resume pause',
+      start: '55% 80%',
+      end:'300% 120%',
+      toggleActions: 'play none none none',
       
     },repeat:-1,});
     const tm= gsap.timeline({scrollTrigger: {
       trigger: '.mainrowmain',
-      start: '65% 80%',
-      end:'300% 80%',
-      toggleActions: 'play none resume pause',
+      start: '55% 80%',
+      end:'300% 120%',
+      toggleActions: 'play none none none',
       
     },repeat:-1,});
     const mtl= gsap.timeline({scrollTrigger: {
       trigger: '.mainrowmain',
-      start: '65% 80%',
-      end:'300% 80%',
-      toggleActions: 'play none resume pause',
+      start: '55% 80%',
+      end:'300% 120%',
+      toggleActions: 'play none none none',
       
     },repeat:-1,});
     const mt2= gsap.timeline({scrollTrigger: {
       trigger: '.mainrowmain',
-      start: '65% 80%',
-      end:'300% 80%',
-      toggleActions: 'play none resume pause',
+      start: '55% 80%',
+      end:'300% 120%',
+      toggleActions: 'play none none none',
       
     },repeat:-1,});
     const mt3= gsap.timeline({scrollTrigger: {
       trigger: '.mainrowmain',
-      start: '65% 80%',
-      end:'300% 80%',
-      toggleActions: 'play none resume pause',
+      start: '55% 80%',
+      end:'300% 120%',
+      toggleActions: 'play none none none',
       
     },repeat:-1,});
     const mt4= gsap.timeline({scrollTrigger: {
       trigger: '.mainrowmain',
-      start: '65% 80%',
-      end:'300% 80%',
-      toggleActions: 'play none resume pause',
+      start: '55% 80%',
+      end:'300% 120%',
+      toggleActions: 'play none none none',
       
     },repeat:-1,});
     const mt5= gsap.timeline({scrollTrigger: {
       trigger: '.mainrowmain',
-      start: '65% 80%',
-      end:'300% 80%',
-      toggleActions: 'play none resume pause',
+      start: '55% 80%',
+      end:'300% 120%',
+      toggleActions: 'play none none none',
       
     },repeat:-1,});
     const mt6= gsap.timeline({scrollTrigger: {
       trigger: '.mainrowmain',
-      start: '65% 80%',
-      end:'300% 80%',
-      toggleActions: 'play none resume pause',
+      start: '55% 80%',
+      end:'300% 120%',
+      toggleActions: 'play none none none',
       
     },repeat:-1,});
     
@@ -295,7 +295,7 @@ const Skills = () => {
       
       xPercent:-130,
       ease:"linear",
-      duration:40,
+      duration:30,
     })
 .to('.row1',{
       color:'#ffc6fe',
@@ -317,7 +317,7 @@ const Skills = () => {
       
       xPercent:-130,
       ease:"linear",
-      duration:40,
+      duration:30,
       
     }).to('.row2',{
       color:'#ffc6fe',
@@ -338,7 +338,7 @@ const Skills = () => {
       
       xPercent:-130,
       ease:"linear",
-      duration:40,
+      duration:30,
       
     }).to('.row3',{
       color:'#ffc6fe',
@@ -360,7 +360,7 @@ const Skills = () => {
       xPercent:-130,
       ease:"linear",
      
-      duration:40,
+      duration:30,
       
     }).to('.row4',{
       color:'#ffc6fe',
@@ -381,7 +381,7 @@ const Skills = () => {
       
       xPercent:-130,
       ease:"linear",
-      duration:40,
+      duration:30,
       
     }).to('.row5',{
       color:'#ffc6fe',
@@ -402,7 +402,7 @@ const Skills = () => {
       
       xPercent:-130,
       ease:"linear",
-      duration:40,
+      duration:30,
       
     }).to('.row6',{
       color:'#ffc6fe',
@@ -424,7 +424,7 @@ const Skills = () => {
       
       xPercent:-130,
       ease:"linear",
-      duration:40,
+      duration:30,
     }).to('.mrow1',{
       color:'#ffc6fe',
       duration:8,
@@ -443,7 +443,7 @@ const Skills = () => {
       
       xPercent:-130,
       ease:"linear",
-      duration:40,
+      duration:30,
       
     }).to('.mrow2',{
       color:'#ffc6fe',
@@ -464,7 +464,7 @@ const Skills = () => {
       
       xPercent:-130,
       ease:"linear",
-      duration:40,
+      duration:30,
       
     }).to('.mrow3',{
       color:'#ffc6fe',
@@ -486,7 +486,7 @@ const Skills = () => {
       xPercent:-130,
       ease:"linear",
      
-      duration:40,
+      duration:30,
       
     }).to('.mrow4',{
       color:'#ffc6fe',
@@ -507,7 +507,7 @@ const Skills = () => {
       
       xPercent:-130,
       ease:"linear",
-      duration:40,
+      duration:30,
       
     }).to('.mrow5',{
       color:'#9b9b9bb3',
@@ -528,7 +528,7 @@ const Skills = () => {
       
       xPercent:-130,
       ease:"linear",
-      duration:40,
+      duration:30,
       
     }).to('.mrow6',{
       color:'#9b9b9bb3',
