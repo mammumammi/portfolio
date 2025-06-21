@@ -5,12 +5,14 @@ import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/all';
 import { delay } from 'motion';
 import dot from '../assets/dot.svg';
+import { div } from 'framer-motion/client';
 gsap.registerPlugin(ScrollTrigger);
 
 const Skills = () => {
   const [width, setWidth] = useState(window.innerWidth);
   const circleRef = useRef(null);
   const skillRef = useRef(null);
+  const time =2;
   const [radius, setRadius] = useState(160);
 
   // Responsive radius update
@@ -51,7 +53,7 @@ const Skills = () => {
       scrollTrigger: {
         trigger: skillRef.current,
         start: 'top 80%',
-        toggleActions: 'play pause resume pause',
+        toggleActions: 'play none resume none',
         
       },
       duration: 40,
@@ -66,7 +68,7 @@ const Skills = () => {
       scrollTrigger: {
         trigger: skillRef.current,
         start: 'top 80%',
-        toggleActions: 'play pause resume pause',
+        toggleActions: 'play none resume none',
         
       },
       duration: 40,
@@ -114,114 +116,427 @@ const Skills = () => {
   }, { scope: skillRef });
 
   useEffect( ()=> {
+     
+    gsap.to('.mainrowmain',{
+      opacity:1,
+      scrollTrigger:{
+        trigger:'mainrowmain',
+        start:'95% 90%',
+        toggleActions:'play none resume reverse',
+        markers:true
+      }
+    })
 
-    const tl= gsap.timeline({repeat:-1,});
-    const t2= gsap.timeline({repeat:-1,});
-    const t3= gsap.timeline({repeat:-1,});
-    const t4= gsap.timeline({repeat:-1,});
-    const t5= gsap.timeline({repeat:-1,});
-    const t6= gsap.timeline({repeat:-1,});
-
-    
-
-    tl.set('.row1',{
+    const tl1= gsap.timeline({scrollTrigger: {
+      trigger: '.mainrowmain',
+      start: '65% 80%',
+      end:'300% 80%',
+  
+      toggleActions: 'play none resume pause',
+     
       
-      xPercent:-130,rotateX:45,
-      rotateY:45,
-      rotateZ:-5,
+    },repeat:-1,});
+    const t2= gsap.timeline({scrollTrigger: {
+      trigger: '.mainrowmain',
+      start: '65% 80%',
+      end:'300% 80%',
+      toggleActions: 'play none resume pause',
+      
+    },repeat:-1,});
+    const t3= gsap.timeline({scrollTrigger: {
+      trigger: '.mainrowmain',
+      start: '65% 80%',
+      end:'300% 80%',
+      toggleActions: 'play none resume pause',
+      
+    },repeat:-1,});
+    const t4= gsap.timeline({scrollTrigger: {
+      trigger: '.mainrowmain',
+      start: '65% 80%',
+      end:'300% 80%',
+      toggleActions: 'play none resume pause',
+      
+    },repeat:-1,});
+    const t5= gsap.timeline({scrollTrigger: {
+      trigger: '.mainrowmain',
+      start: '65% 80%',
+      end:'300% 80%',
+      toggleActions: 'play none resume pause',
+      
+    },repeat:-1,});
+    const t6= gsap.timeline({scrollTrigger: {
+      trigger: '.mainrowmain',
+      start: '65% 80%',
+      end:'300% 80%',
+      toggleActions: 'play none resume pause',
+      
+    },repeat:-1,});
+    const tm= gsap.timeline({scrollTrigger: {
+      trigger: '.mainrowmain',
+      start: '65% 80%',
+      end:'300% 80%',
+      toggleActions: 'play none resume pause',
+      
+    },repeat:-1,});
+    const mtl= gsap.timeline({scrollTrigger: {
+      trigger: '.mainrowmain',
+      start: '65% 80%',
+      end:'300% 80%',
+      toggleActions: 'play none resume pause',
+      
+    },repeat:-1,});
+    const mt2= gsap.timeline({scrollTrigger: {
+      trigger: '.mainrowmain',
+      start: '65% 80%',
+      end:'300% 80%',
+      toggleActions: 'play none resume pause',
+      
+    },repeat:-1,});
+    const mt3= gsap.timeline({scrollTrigger: {
+      trigger: '.mainrowmain',
+      start: '65% 80%',
+      end:'300% 80%',
+      toggleActions: 'play none resume pause',
+      
+    },repeat:-1,});
+    const mt4= gsap.timeline({scrollTrigger: {
+      trigger: '.mainrowmain',
+      start: '65% 80%',
+      end:'300% 80%',
+      toggleActions: 'play none resume pause',
+      
+    },repeat:-1,});
+    const mt5= gsap.timeline({scrollTrigger: {
+      trigger: '.mainrowmain',
+      start: '65% 80%',
+      end:'300% 80%',
+      toggleActions: 'play none resume pause',
+      
+    },repeat:-1,});
+    const mt6= gsap.timeline({scrollTrigger: {
+      trigger: '.mainrowmain',
+      start: '65% 80%',
+      end:'300% 80%',
+      toggleActions: 'play none resume pause',
+      
+    },repeat:-1,});
+    
+    gsap.set('.row1',{
+      color:'#9b9b9bb3',
+      xPercent:-730
+
+    })
+    gsap.set('.row2',{
+      color:'#9b9b9bb3',
+      xPercent:-730
+
+    })
+    gsap.set('.row3',{
+      color:'#9b9b9bb3',
+      xPercent:-730
+
+    })
+    gsap.set('.row4',{
+      color:'#9b9b9bb3',
+      xPercent:-730
+
+    })
+    gsap.set('.row5',{
+      color:'#9b9b9bb3',
+      xPercent:-730
+
+    })
+    gsap.set('.row6',{
+      color:'#9b9b9bb3',
+      xPercent:-730
+
+    })
+
+    gsap.set('.mrow1',{
+      color:'#9b9b9bb3',
+      xPercent:-730
+
+    })
+    gsap.set('.mrow2',{
+      color:'#9b9b9bb3',
+      xPercent:-730
+
+    })
+    gsap.set('.mrow3',{
+      color:'#9b9b9bb3',
+      xPercent:-730
+
+    })
+    gsap.set('.mrow4',{
+      color:'#9b9b9bb3',
+      xPercent:-730
+
+    })
+    gsap.set('.mrow5',{
+      color:'#9b9b9bb3',
+      xPercent:-730
+
+    })
+    gsap.set('.mrow6',{
+      color:'#9b9b9bb3',
+      xPercent:-730
+
+    })
+
+    tl1.set('.row1',{
+      
+      xPercent:-730,
+      
+      
     })
     .to('.row1',{
-      rotateX:45,
-      rotateY:45,
       
-      xPercent:-30,
+      
+      
+      xPercent:-130,
       ease:"linear",
-      duration:10,
+      duration:40,
     })
+.to('.row1',{
+      color:'#ffc6fe',
+      duration:8,
+    },2).to('.row1',{
+      color:'#9b9b9bb3',
+      duration:8,
+    },13)
 
+    
     t2.set('.row2',{
       
-      xPercent:-130,rotateX:45,
-      rotateY:45,
-      rotateZ:-5,
-    })
-    .to('.row2',{
-      rotateX:45,
-      rotateY:45,
-      rotateZ:-5,
-      xPercent:-30,
-      ease:"linear",
-      duration:10,
+      xPercent:-730,
+      
       
     })
+    .to('.row2',{
+      
+      
+      xPercent:-130,
+      ease:"linear",
+      duration:40,
+      
+    }).to('.row2',{
+      color:'#ffc6fe',
+      duration:8,
+    },3).to('.row2',{
+      color:'#9b9b9bb3',
+      duration:8,
+    },14)
 
     t3.set('.row3',{
       
-      xPercent:-130,rotateX:45,
-      rotateY:45,
-      rotateZ:-5,
-    })
-    .to('.row3',{
-      rotateX:45,
-      rotateY:45,
-      rotateZ:-5,
-      xPercent:-30,
-      ease:"linear",
-      duration:10,
+      xPercent:-730,
+      
       
     })
+    .to('.row3',{
+      
+      
+      xPercent:-130,
+      ease:"linear",
+      duration:40,
+      
+    }).to('.row3',{
+      color:'#ffc6fe',
+      duration:8,
+    },3).to('.row3',{
+      color:'#9b9b9bb3',
+      duration:8,
+    },15)
 
     t4.fromTo('.row4',{
       
-      xPercent:-130,rotateX:45,
-      rotateY:45,
-      rotateZ:-5,
+      xPercent:-730,
+      
+      
       color:'#9b9b9bb3'
     },{
-      rotateX:45,
-      rotateY:45,
-      rotateZ:-5,
-      xPercent:-30,
+      
+      
+      xPercent:-130,
       ease:"linear",
      
-      duration:10,
+      duration:40,
       
     }).to('.row4',{
       color:'#ffc6fe',
-      duration:3,
-    },2)
+      duration:8,
+    },4).to('.row4',{
+      color:'#9b9b9bb3',
+      duration:8,
+    },16)
 
     t5.set('.row5',{
       
-      xPercent:-130,rotateX:45,
-      rotateY:45,
-      rotateZ:-5,
-    })
-    .to('.row5',{
-      rotateX:45,
-      rotateY:45,
-      rotateZ:-5,
-      xPercent:-30,
-      ease:"linear",
-      duration:10,
+      xPercent:-730,
+      
       
     })
+    .to('.row5',{
+      
+      
+      xPercent:-130,
+      ease:"linear",
+      duration:40,
+      
+    }).to('.row5',{
+      color:'#ffc6fe',
+      duration:8,
+    },5).to('.row5',{
+      color:'#9b9b9bb3',
+      duration:8,
+    },17)
 
     t6.set('.row6',{
       
-      xPercent:-130,rotateX:45,
-      rotateY:45,
-      rotateZ:-5,
-    })
-    .to('.row6',{
-      rotateX:45,
-      rotateY:45,
-      rotateZ:-5,
-      xPercent:-30,
-      ease:"linear",
-      duration:10,
+      xPercent:-730,
+      
       
     })
+    .to('.row6',{
+      
+      
+      xPercent:-130,
+      ease:"linear",
+      duration:40,
+      
+    }).to('.row6',{
+      color:'#ffc6fe',
+      duration:8,
+    },6).to('.row6',{
+      color:'#9b9b9bb3',
+      duration:8,
+    },18)
+
+    mtl.set('.mrow1',{
+      
+      xPercent:-730,
+      
+      
+    })
+    .to('.mrow1',{
+      
+      
+      
+      xPercent:-130,
+      ease:"linear",
+      duration:40,
+    }).to('.mrow1',{
+      color:'#ffc6fe',
+      duration:8,
+    },7).to('.mrow1',{
+      color:'#9b9b9bb3',
+      duration:8,
+    },19)
+    mt2.set('.mrow2',{
+      
+      xPercent:-730,
+      
+      
+    })
+    .to('.mrow2',{
+      
+      
+      xPercent:-130,
+      ease:"linear",
+      duration:40,
+      
+    }).to('.mrow2',{
+      color:'#ffc6fe',
+      duration:8,
+    },8).to('.mrow2',{
+      color:'#9b9b9bb3',
+      duration:8,
+    },20)
+
+    mt3.set('.mrow3',{
+      
+      xPercent:-730,
+      
+      
+    })
+    .to('.mrow3',{
+      
+      
+      xPercent:-130,
+      ease:"linear",
+      duration:40,
+      
+    }).to('.mrow3',{
+      color:'#ffc6fe',
+      duration:8,
+    },9).to('.mrow3',{
+      color:'#9b9b9bb3',
+      duration:8,
+    },21)
+
+    mt4.fromTo('.mrow4',{
+      
+      xPercent:-730,
+      
+      
+      color:'#9b9b9bb3'
+    },{
+      
+      
+      xPercent:-130,
+      ease:"linear",
+     
+      duration:40,
+      
+    }).to('.mrow4',{
+      color:'#ffc6fe',
+      duration:8,
+    },10).to('.mrow4',{
+      color:'#9b9b9bb3',
+      duration:8,
+    },22)
+
+    mt5.set('.mrow5',{
+      
+      xPercent:-730,
+      
+      
+    })
+    .to('.mrow5',{
+      
+      
+      xPercent:-130,
+      ease:"linear",
+      duration:40,
+      
+    }).to('.mrow5',{
+      color:'#9b9b9bb3',
+      duration:8,
+    },11).to('.mrow5',{
+      color:'#ffc6fe',
+      duration:8,
+    },23)
+
+    mt6.set('.mrow6',{
+      
+      xPercent:-730,
+      
+      
+    })
+    .to('.mrow6',{
+      
+      
+      xPercent:-130,
+      ease:"linear",
+      duration:40,
+      
+    }).to('.mrow6',{
+      color:'#9b9b9bb3',
+      duration:8,
+    },12).to('.mrow6',{
+      color:'#ffc6fe',
+      duration:8,
+    },24)
 
 
   })
@@ -267,8 +582,47 @@ const Skills = () => {
       </div></>}    
       
       </div>
-      {width < 768 ? <div className=' text-[70px] -space-y-3 h-[100dvh] overflow-hidden mainrow pt-10'>
+      {width < 768 ? <div className='opacity-0 overflow-hidden -mt-[80px] mainrowmain'><div className=' text-[90px] -space-y-3 h-[100dvh] overflow-none mainrow  transform ' style={{
+        transform:'rotateZ(-5deg) rotateY(45deg) rotateX(45deg)',
+        transformStyle:'preserve-3d'
+      }}>
         <div className='flex flex-row row1 '>
+          <p className='font-[CDTRegular] font-extraLight '>Python</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Java</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Python</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Java</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Python</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Java</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Python</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Java</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Python</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Java</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Python</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Java</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Python</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Java</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Python</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Java</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Python</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Java</p>
+          <img src={dot} className='w-[80px]' alt="" />
           <p className='font-[CDTRegular] font-extraLight '>Python</p>
           <img src={dot} className='w-[80px]' alt="" />
           <p className='font-[CDTRegular] font-extraLight '>Java</p>
@@ -284,8 +638,57 @@ const Skills = () => {
 
         </div>
         
+        
         <div className='flex flex-row row2'>
         <p className='font-[CDTRegular] font-extraLight '>C</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C++</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C++</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C++</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C++</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C++</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C++</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C++</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C++</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C++</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C++</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C++</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C++</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C</p>
           <img src={dot} className='w-[80px]' alt="" />
           <p className='font-[CDTRegular] font-extraLight '>C++</p>
           <img src={dot} className='w-[80px]' alt="" />
@@ -315,9 +718,81 @@ const Skills = () => {
           <img src={dot} className='w-[80px]' alt="" />
           <p className='font-[CDTRegular] font-extraLight '>Solidity</p>
           <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>MySQL</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Solidity</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>MySQL</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Solidity</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>MySQL</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Solidity</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>MySQL</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Solidity</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>MySQL</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Solidity</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>MySQL</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Solidity</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>MySQL</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Solidity</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>MySQL</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Solidity</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>MySQL</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Solidity</p>
+          <img src={dot} className='w-[80px]' alt="" />
         </div>
         <div className='flex flex-row row4'>
         <p className='font-[CDTRegular] font-extraLight '>HTML</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>CSS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>JavaScript</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>HTML</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>CSS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>JavaScript</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>HTML</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>CSS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>JavaScript</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>HTML</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>CSS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>JavaScript</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>HTML</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>CSS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>JavaScript</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>HTML</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>CSS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>JavaScript</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>HTML</p>
           <img src={dot} className='w-[80px]' alt="" />
           <p className='font-[CDTRegular] font-extraLight '>CSS</p>
           <img src={dot} className='w-[80px]' alt="" />
@@ -344,6 +819,66 @@ const Skills = () => {
           <img src={dot} className='w-[80px]' alt="" />
           <p className='font-[CDTRegular] font-extraLight '>Three.JS</p>
           <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>React.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Three.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>React.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Three.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>React.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Three.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>React.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Three.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>React.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Three.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>React.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Three.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>React.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Three.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>React.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Three.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>React.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Three.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>React.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Three.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>React.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Three.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>React.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Three.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>React.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Three.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>React.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Three.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>React.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Three.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
         </div>
         <div className='flex flex-row row6'>
         <p className='font-[CDTRegular] font-extraLight '>Leadership</p>
@@ -358,11 +893,416 @@ const Skills = () => {
           <img src={dot} className='w-[80px]' alt="" />
           <p className='font-[CDTRegular] font-extraLight '>Presentation</p>
           <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Leadership</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Presentation</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Leadership</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Presentation</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Leadership</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Presentation</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Leadership</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Presentation</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Leadership</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Presentation</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Leadership</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Presentation</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Leadership</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Presentation</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Leadership</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Presentation</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Leadership</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Presentation</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Leadership</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Presentation</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Leadership</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Presentation</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Leadership</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Presentation</p>
+          <img src={dot} className='w-[80px]' alt="" />
           
+        </div>
+        <div className='flex flex-row mrow1 '>
+          <p className='font-[CDTRegular] font-extraLight '>Python</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Java</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Python</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Java</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Python</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Java</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Python</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Java</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Python</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Java</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Python</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Java</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Python</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Java</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Python</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Java</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Python</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Java</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Python</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Java</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Python</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Java</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Python</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Java</p>
+          <img src={dot} className='w-[80px]' alt="" />
+
         </div>
         
         
-      </div> : <div></div>}
+        <div className='flex flex-row mrow2'>
+        <p className='font-[CDTRegular] font-extraLight '>C</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C++</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C++</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C++</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C++</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C++</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C++</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C++</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C++</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C++</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C++</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C++</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C++</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C++</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C++</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C++</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>C++</p>
+          <img src={dot} className='w-[80px]' alt="" />
+        </div>
+        <div className='flex flex-row mrow3'>
+        <p className='font-[CDTRegular] font-extraLight '>MySQL</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Solidity</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>MySQL</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Solidity</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>MySQL</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Solidity</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>MySQL</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Solidity</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>MySQL</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Solidity</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>MySQL</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Solidity</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>MySQL</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Solidity</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>MySQL</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Solidity</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>MySQL</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Solidity</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>MySQL</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Solidity</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>MySQL</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Solidity</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>MySQL</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Solidity</p>
+          <img src={dot} className='w-[80px]' alt="" />
+        </div>
+        <div className='flex flex-row mrow4'>
+        <p className='font-[CDTRegular] font-extraLight '>HTML</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>CSS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>JavaScript</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>HTML</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>CSS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>JavaScript</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>HTML</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>CSS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>JavaScript</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>HTML</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>CSS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>JavaScript</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>HTML</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>CSS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>JavaScript</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>HTML</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>CSS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>JavaScript</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>HTML</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>CSS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>JavaScript</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>HTML</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>CSS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>JavaScript</p>
+          <img src={dot} className='w-[80px]' alt="" />
+
+        </div>
+        <div className='flex flex-row mrow5'>
+        <p className='font-[CDTRegular] font-extraLight '>React.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Three.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>React.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Three.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>React.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Three.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>React.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Three.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>React.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Three.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>React.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Three.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>React.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Three.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>React.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Three.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>React.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Three.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>React.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Three.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>React.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Three.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>React.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Three.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>React.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Three.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>React.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Three.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>React.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Three.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>React.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Three.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>React.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Three.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>React.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Three.JS</p>
+          <img src={dot} className='w-[80px]' alt="" />
+
+        </div>
+        <div className='flex flex-row mrow6'>
+        <p className='font-[CDTRegular] font-extraLight '>Leadership</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Presentation</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Leadership</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Presentation</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Leadership</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Presentation</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Leadership</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Presentation</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Leadership</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Presentation</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Leadership</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Presentation</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Leadership</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Presentation</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Leadership</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Presentation</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Leadership</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Presentation</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Leadership</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Presentation</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Leadership</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Presentation</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Leadership</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Presentation</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Leadership</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Presentation</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Leadership</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Presentation</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Leadership</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          <p className='font-[CDTRegular] font-extraLight '>Presentation</p>
+          <img src={dot} className='w-[80px]' alt="" />
+          
+        </div>
+        
+      </div></div> : <div></div>}
     </section>
   );
 };
