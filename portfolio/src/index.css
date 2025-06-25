@@ -45,6 +45,38 @@
   border:#190e2d solid 0.5px;
  }
 
+ .box{
+  position: relative;
+  
+ 
+  overflow: hidden;
+
+  
+ }
+
+
+ .box::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: linear-gradient(to top,rgba(192, 51, 51, 0),rgba(0,0,0,0)),
+  url('./assets/apple.jpg');
+  background-size: cover;
+  background-position: center;
+  transition: filter 0.3s ease;
+
+ }
+
+ .box:hover::before{
+  filter: blur(2px);
+ -webkit-filter: blur(2px);
+ }
+
+ .box > * {
+  position: relative;
+  z-index: 1;
+ }
 
   .text{
     font-family: "Major Mono Display", monospace;

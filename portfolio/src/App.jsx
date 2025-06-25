@@ -10,6 +10,7 @@ import About from './components/About'
 import { ScrollTrigger } from 'gsap/all'
 import Skills from './components/Skills'
 import { animateWithGsap, animateWithGsapTimeline } from './components/animation'
+import Projects from './components/Projects'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -73,6 +74,7 @@ const App = () => {
      
     <About />
     <Skills />
+    <Projects/>
   
    </div>
   )
