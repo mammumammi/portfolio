@@ -57,7 +57,7 @@ const App = () => {
 
   
   return(
-    <div>
+    <div className='overflow-x-hidden overflow-y-hidden'>
     
      <Navbar />
      <div className=' w-full md:h-[90vh] h-[60vh] flex justify-center items-center overflow-hidden z-10'>

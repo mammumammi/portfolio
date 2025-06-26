@@ -549,7 +549,7 @@ const Skills = () => {
   })
 
   return (
-    <section className="relative ">
+    <section className="relative overflow-hidden ">
       <div className='  md:h-[100vh]  overflow-hidden'>
       {width > 768 ? <div className="top-[40vh] me text-[120px] w-full h-auto flex items-center justify-center m-auto -ml-2 title">
         Skills
