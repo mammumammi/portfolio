@@ -1,8 +1,63 @@
 import React from 'react'
 import web from '../assets/weblink.svg'
+import apple from '../assets/apple.jpg';
+import brainwave from '../assets/brainwave-symbol.svg';
 const Projects = () => {
+
+  const  projList = [{
+    title:'Iphone 15 Website',
+    content:'This is a landing page concept built for the iPhone 15, inspired by modern Apple product pages. The goal of the project was to recreate a clean, interactive, and visually engaging product showcase using modern web technologies.',
+    techStack:['HTML','CSS','JS','React.JS','Tailwind CSS','GSAP'],
+    webLink:'https://iphonefifteen.netlify.app/',
+    repo:'https://github.com/mammumammi/Apple_website',
+    vid:'https://res.cloudinary.com/ddbkg48oy/video/upload/so_0,eo_33/v1750918004/Screen_Recording_2025-06-26_at_11.35.26_AM_w10fcv.mov',
+    logo:apple
+  },
+  {
+    title:'Brainwave AI - Modern SaaS Landing Page',
+    content:'Brainwave AI is a futuristic SaaS landing page concept designed to showcase an AI-powered product. The website demonstrates cutting-edge UI/UX practices inspired by modern AI tools and startup landing pages.',
+    techStack:['HTML','CSS','JS','React.JS','Tailwind CSS'],
+    webLink:'https://brainwave1234456.netlify.app/',
+    repo:'https://github.com/mammumammi/brainWave_website',
+    vid:'https://res.cloudinary.com/ddbkg48oy/video/upload/v1751513859/Screen_Recording_2025-07-03_at_9.04.46_AM_fdhsfo.mov',
+    logo:brainwave
+  },{
+    title:'Iphone 15 Website',
+    content:'This is a landing page concept built for the iPhone 15, inspired by modern Apple product pages. The goal of the project was to recreate a clean, interactive, and visually engaging product showcase using modern web technologies.',
+    techStack:['HTML','CSS','JS','React.JS','Tailwind CSS','GSAP'],
+    webLink:'https://iphonefifteen.netlify.app/',
+    repo:'https://github.com/mammumammi/Apple_website',
+    vid:'https://res.cloudinary.com/ddbkg48oy/video/upload/so_0,eo_33/v1750918004/Screen_Recording_2025-06-26_at_11.35.26_AM_w10fcv.mov',
+    logo:apple
+  },{
+    title:'Iphone 15 Website',
+    content:'This is a landing page concept built for the iPhone 15, inspired by modern Apple product pages. The goal of the project was to recreate a clean, interactive, and visually engaging product showcase using modern web technologies.',
+    techStack:['HTML','CSS','JS','React.JS','Tailwind CSS','GSAP'],
+    webLink:'https://iphonefifteen.netlify.app/',
+    repo:'https://github.com/mammumammi/Apple_website',
+    vid:'https://res.cloudinary.com/ddbkg48oy/video/upload/so_0,eo_33/v1750918004/Screen_Recording_2025-06-26_at_11.35.26_AM_w10fcv.mov',
+    logo:apple
+  },{
+    title:'Iphone 15 Website',
+    content:'This is a landing page concept built for the iPhone 15, inspired by modern Apple product pages. The goal of the project was to recreate a clean, interactive, and visually engaging product showcase using modern web technologies.',
+    techStack:['HTML','CSS','JS','React.JS','Tailwind CSS','GSAP'],
+    webLink:'https://iphonefifteen.netlify.app/',
+    repo:'https://github.com/mammumammi/Apple_website',
+    vid:'https://res.cloudinary.com/ddbkg48oy/video/upload/so_0,eo_33/v1750918004/Screen_Recording_2025-06-26_at_11.35.26_AM_w10fcv.mov',
+    logo:apple
+  },{
+    title:'Iphone 15 Website',
+    content:'This is a landing page concept built for the iPhone 15, inspired by modern Apple product pages. The goal of the project was to recreate a clean, interactive, and visually engaging product showcase using modern web technologies.',
+    techStack:['HTML','CSS','JS','React.JS','Tailwind CSS','GSAP'],
+    webLink:'https://iphonefifteen.netlify.app/',
+    repo:'https://github.com/mammumammi/Apple_website',
+    vid:'https://res.cloudinary.com/ddbkg48oy/video/upload/so_0,eo_33/v1750918004/Screen_Recording_2025-06-26_at_11.35.26_AM_w10fcv.mov',
+    logo:apple
+  },
+];
+
   return (
-    <div className='h-screen w-screen'>
+    <div className='h-auto w-screen'>
         <div className='me md:text-8xl text-6xl flex items-center justify-center py-[50px]'>Projects</div>
         <div className='relative '>
             
@@ -27,16 +82,20 @@ const Projects = () => {
 
 
 
-            <div className='md:w-[60%] items-center justify-center mx-auto text-white absolute top-[50%] z-20' >
-                <button className='md:w-1/2 w-[90%] rounded-2xl mx-5 h-[25dvh] group box  flex flex-col  items-center gap-5 border-transparent py-[20px] text-2xl normText  ' 
-                onClick={{}}
-                >
-                <p className='md:opacity-0 text-3xl md:text-2xl  transition-all duration-300 group-hover:opacity-100'>title</p>
-                
-                </button>
+            <div className='md:w-full mx-auto text-white absolute top-[50%] z-20 md:left-[8%] overflow-hidden' >
+              <div className='flex flex-wrap gap-4  overflow-hidden '>
 
+              
+              {projList.map((item,index) => (
+                <div key={index} className='md:w-[25vw] md:h-[20vh] box hover:blur-[2px] overflow-hidden relative transiion duration-300 rounded-[25px] bg-black' >
+                  
+                     
+                <img src={item.logo} alt="" className='w-full h-full object-contain object-center' />
             
-            
+         
+        </div>
+              ))}
+                </div>
             </div>
         </div>
     </div>
