@@ -48,6 +48,14 @@
   
  }
 
+ .scrollbar-hide::-webkit-scrollbar{
+  display: none;
+ }
+
+ .crollbar-hide{
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+ }
 
  .box::before{
   content: "";
