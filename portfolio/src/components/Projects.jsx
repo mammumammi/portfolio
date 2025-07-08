@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import web from '../assets/weblink.svg'
 import apple from '../assets/apple.svg';
 import brainwave from '../assets/brainwave-symbol.svg';
-const Projects = () => {
+import github from '../assets/github.svg';
+import arrow from '../assets/arrow.svg';
+import gsap from 'gsap';
 
+import { useGSAP } from '@gsap/react';
+const Projects = () => {
   const  projList = [{
     title:'Iphone 15 Website',
     content:'This is a landing page concept built for the iPhone 15, inspired by modern Apple product pages. The goal of the project was to recreate a clean, interactive, and visually engaging product showcase using modern web technologies.',
@@ -56,6 +60,66 @@ const Projects = () => {
   },
 ];
 
+  const containerRef1 = useRef(null);
+  const imgRef1 = useRef(null);
+  const containerRef2 = useRef(null);
+  const imgRef2 = useRef(null);
+
+  useEffect( ()=> {
+  const AnimateButton = (el,elimg) => {
+      const shrink = () => {
+        gsap.to(el,{
+          width:'50px',
+          duration:0.3,
+          backgroundColor:'transparent',
+          ease:'bounce.in',
+        })
+  
+        gsap.to(elimg,{
+          autoAlpha:1,
+          duration:0.3,
+          ease:'none'
+        })
+      }
+  
+      const expand = () => {
+        gsap.to(el,{
+          width:'150px',
+          duration:0.3,
+          backgroundColor:'white',
+          ease:'back.in'
+        })
+  
+        gsap.to(elimg,{
+          autoAlpha:0,
+          duration:0.4,
+          delay:0.2,
+          ease:'expo'
+        })
+      }
+  
+      el.addEventListener('mouseenter',expand);
+      el.addEventListener('mouseleave',shrink);
+    return () => {
+      el.removeEventListener('mouseenter',expand);
+      el.removeEventListener('mouseleave',shrink);
+    }
+  }
+  
+
+  const cleanups = [
+    AnimateButton(containerRef1.current,imgRef1.current),
+    AnimateButton(containerRef2.current,imgRef2.current)
+
+
+    ]
+
+  return () => cleanups.forEach( (fn) => fn && fn());
+  
+
+  },[])
+
+
   return (
     <div className='h-full w-screen '>
         <div className='me md:text-8xl text-6xl flex items-center justify-center py-[50px]'>Projects</div>
@@ -68,7 +132,19 @@ const Projects = () => {
               <div className=' flex items-center flex-col gap-y-5 normText '>
                 <p className=' md:text-4xl text-3xl '>Iphone 15 Pro Website</p>
                 <p className='w-[60dvw] text-center'>A mock website that features the Iphone 15 Pro and Iphone 15 Pro Max.A high perfomance website that features snappy and modern animations </p>
-                <a href="https://iphonefifteen.netlify.app/">website link <img src={web} className='' alt="" /></a>
+                <div className='flex flex-row gap-x-5'>
+
+                
+                <a href=""><div ref={containerRef1} className='md:w-[50px] duration-300   h-[80px] md:h-[50px] rounded-[25px] items-center justify-center group flex relative'>
+                    <p className='normText absolute text-3xl  text-black hidden group-hover:flex duration-300 delay-[2000] text-center  mx-auto transition-all'>Website</p>
+                    <img src={arrow} ref={imgRef1} alt="" className='m-auto invert  h-full p-3 md:p-2 ' />
+                    </div></a>
+                  <a href=""><div ref={containerRef2} className='md:w-[50px] duration-300   h-[80px] md:h-[50px] rounded-[25px] items-center justify-center group flex relative'>
+                    <p className='normText absolute text-3xl  text-black hidden group-hover:flex duration-300 delay-[2000] text-center  mx-auto transition-all'>Github</p>
+                    <img src={github} ref={imgRef2} alt="" className='m-auto invert  h-full p-3 md:p-2 ' />
+                    </div></a>
+               
+                </div>
                 <p className='w-[80dvw] text-center text-4xl'>Tech Stack</p>
                 <div className='flex justify-center w-screen flex-row space-x-5 text-center'>
                 <p >ReactJS</p>
