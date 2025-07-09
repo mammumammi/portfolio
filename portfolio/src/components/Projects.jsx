@@ -64,20 +64,36 @@ const Projects = () => {
   const imgRef1 = useRef(null);
   const containerRef2 = useRef(null);
   const imgRef2 = useRef(null);
+  const textRef1 = useRef(null);
+  const textRef2 = useRef(null);
 
   useEffect( ()=> {
-  const AnimateButton = (el,elimg) => {
+  const AnimateButton = (el,elimg,text) => {
       const shrink = () => {
         gsap.to(el,{
           width:'50px',
           duration:0.3,
-          backgroundColor:'transparent',
+          backgroundColor:'white',
           ease:'bounce.in',
+        })
+        gsap.to(text,{
+          autoAlpha:0,
+          
+          duration:0.1,
+          delay:0.1,
+          ease:'sine.inOut'
+        })
+        gsap.to(el,{
+          backgroundColor:'transparent',
+          duration:0.1,
+          delay:0.5,
+          ease:'none'
         })
   
         gsap.to(elimg,{
           autoAlpha:1,
           duration:0.3,
+          delay:0.2,
           ease:'none'
         })
       }
@@ -89,11 +105,19 @@ const Projects = () => {
           backgroundColor:'white',
           ease:'back.in'
         })
-  
+        
+        gsap.to(text,{
+          autoAlpha:1,
+          color:'black',
+          duration:0.1,
+          delay:0.3,
+          ease:'sine.inOut'
+        })
+
         gsap.to(elimg,{
           autoAlpha:0,
           duration:0.4,
-          delay:0.2,
+          delay:0.4,
           ease:'expo'
         })
       }
@@ -108,8 +132,8 @@ const Projects = () => {
   
 
   const cleanups = [
-    AnimateButton(containerRef1.current,imgRef1.current),
-    AnimateButton(containerRef2.current,imgRef2.current)
+    AnimateButton(containerRef1.current,imgRef1.current,textRef1.current),
+    AnimateButton(containerRef2.current,imgRef2.current,textRef2.current)
 
 
     ]
@@ -132,16 +156,17 @@ const Projects = () => {
               <div className=' flex items-center flex-col gap-y-5 normText '>
                 <p className=' md:text-4xl text-3xl '>Iphone 15 Pro Website</p>
                 <p className='w-[60dvw] text-center'>A mock website that features the Iphone 15 Pro and Iphone 15 Pro Max.A high perfomance website that features snappy and modern animations </p>
-                <div className='flex flex-row gap-x-5'>
+                <div className='flex flex-row gap-x-10'>
 
                 
-                <a href=""><div ref={containerRef1} className='md:w-[50px] duration-300   h-[80px] md:h-[50px] rounded-[25px] items-center justify-center group flex relative'>
-                    <p className='normText absolute text-3xl  text-black hidden group-hover:flex duration-300 delay-[2000] text-center  mx-auto transition-all'>Website</p>
-                    <img src={arrow} ref={imgRef1} alt="" className='m-auto invert  h-full p-3 md:p-2 ' />
+                <a href=""><div ref={containerRef1} className='md:w-[50px] duration-300   h-[70px] md:h-[45px] rounded-[25px] items-center justify-center group flex relative'>
+                    <p className='normText absolute text-3xl  text-transparent flex opacity-0 text-center  mx-auto transition-all textAni'ref={textRef1} >Website</p>
+                    <img src={arrow} ref={imgRef1} alt="" className='m-auto invert  h-full p-3 md:p-0 ' />
                     </div></a>
-                  <a href=""><div ref={containerRef2} className='md:w-[50px] duration-300   h-[80px] md:h-[50px] rounded-[25px] items-center justify-center group flex relative'>
-                    <p className='normText absolute text-3xl  text-black hidden group-hover:flex duration-300 delay-[2000] text-center  mx-auto transition-all'>Github</p>
-                    <img src={github} ref={imgRef2} alt="" className='m-auto invert  h-full p-3 md:p-2 ' />
+                  <a href=""><div ref={containerRef2} className='md:w-[50px] duration-300   h-[80px] md:h-[45px] rounded-[25px] items-center justify-center group flex relative'>
+                    <p className='normText absolute text-3xl  text-transparent
+                    flex opacity-0 text-center  mx-auto transition-all textAni ' ref={textRef2}>Github</p>
+                    <img src={github} ref={imgRef2} alt="" className='m-auto invert  h-full p-3 md:p-0 ' />
                     </div></a>
                
                 </div>
@@ -158,7 +183,7 @@ const Projects = () => {
 
 
 
-            <div className='md:w-full  text-white absolute md:top-[65%] md:left-0 top-[40%] left-[10vw] z-20  md:overflow-hidden' >
+            <div className='md:w-full   text-white absolute md:top-[65%] md:left-0 top-[55%] left-[10vw] z-20  md:overflow-hidden' >
               <div className='md:w-[70vw]  md:mx-auto  overflow-x-auto gap-6 px-4 w-[80vw] mx-auto md:h-auto h-[100vh] overflow-y-auto md:overflow-y-none whitespace-nowrap md:space-x-8 space-y-8 scrollbar-hide '>
 
               

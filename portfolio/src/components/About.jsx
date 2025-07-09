@@ -45,7 +45,7 @@ const About = () => {
     gsap.set(split.lines, { display: "inline" })
     if (width<768){
     gsap.to(split.chars,{
-      fontSize:"16px",
+      
       color:"#ffc9ff",
       
       ease:"power4.in",
