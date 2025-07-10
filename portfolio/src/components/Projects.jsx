@@ -1,13 +1,25 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import web from '../assets/weblink.svg'
 import apple from '../assets/apple.svg';
 import brainwave from '../assets/brainwave-symbol.svg';
 import github from '../assets/github.svg';
 import arrow from '../assets/arrow.svg';
 import gsap from 'gsap';
+import india from '../assets/india.svg';
+import smile from '../assets/smile.svg';
+
 
 import { useGSAP } from '@gsap/react';
 const Projects = () => {
+  const [width, setWidth] = useState(window.innerWidth);
+  const [isOpen, setIsOpen] = useState(false);
+  const videoRef = useRef(null);
+  const imageRef = useRef(null);
+  const titleRef = useRef(null);
+  const contentRef = useRef(null);
+  const stackRef = useRef(null);
+  const techRef = useRef(null);
+
   const  projList = [{
     title:'Iphone 15 Website',
     content:'This is a landing page concept built for the iPhone 15, inspired by modern Apple product pages. The goal of the project was to recreate a clean, interactive, and visually engaging product showcase using modern web technologies.',
@@ -26,28 +38,28 @@ const Projects = () => {
     vid:'https://res.cloudinary.com/ddbkg48oy/video/upload/v1751513859/Screen_Recording_2025-07-03_at_9.04.46_AM_fdhsfo.mov',
     logo:brainwave
   },{
-    title:'Iphone 15 Website',
-    content:'This is a landing page concept built for the iPhone 15, inspired by modern Apple product pages. The goal of the project was to recreate a clean, interactive, and visually engaging product showcase using modern web technologies.',
-    techStack:['HTML','CSS','JS','React.JS','Tailwind CSS','GSAP'],
-    webLink:'https://iphonefifteen.netlify.app/',
-    repo:'https://github.com/mammumammi/Apple_website',
-    vid:'https://res.cloudinary.com/ddbkg48oy/video/upload/so_0,eo_33/v1750918004/Screen_Recording_2025-06-26_at_11.35.26_AM_w10fcv.mov',
-    logo:apple
+    title:'Code-A-Flag',
+    content:'A winning project which uses turtle animation library in python for animating The Indian Flag as part of the competition for Tinkerhub CUCEK chapter,Code-A-Flag contest',
+    techStack:['Python','Turtle Library'],
+    webLink:'/',
+    repo:'https://github.com/mammumammi/Code-A-Flag',
+    vid:'https://res.cloudinary.com/ddbkg48oy/video/upload/v1751514834/output_z6varg.mp4',
+    logo:india
   },{
-    title:'Iphone 15 Website',
-    content:'This is a landing page concept built for the iPhone 15, inspired by modern Apple product pages. The goal of the project was to recreate a clean, interactive, and visually engaging product showcase using modern web technologies.',
-    techStack:['HTML','CSS','JS','React.JS','Tailwind CSS','GSAP'],
-    webLink:'https://iphonefifteen.netlify.app/',
-    repo:'https://github.com/mammumammi/Apple_website',
-    vid:'https://res.cloudinary.com/ddbkg48oy/video/upload/so_0,eo_33/v1750918004/Screen_Recording_2025-06-26_at_11.35.26_AM_w10fcv.mov',
-    logo:apple
+    title:'Emotion Tester',
+    content:"A totally pointless quest for emotional truth.This project’s sole purpose is to look at your face, guess your mood (probably wrong), and send you off to a webpage that might vaguely match your vibe But why?.Why not?No one needs a mood-guessing web that guessing moods just based on our facial expressions. FEATURES Random attempts at figuring out if you're happy, sad, or just plain annoyed at this whole thing.",
+    techStack:['HTML','CSS','JS','React.JS','Tailwind CSS'],
+    webLink:'https://hackwatersemotiontester.netlify.app/',
+    repo:'https://github.com/mammumammi/Emotion_Tester',
+    vid:'https://res.cloudinary.com/ddbkg48oy/video/upload/v1751514541/Screen_Recording_2025-07-03_at_9.17.08_AM_hrnksh.mov',
+    logo:smile
   },{
-    title:'Iphone 15 Website',
-    content:'This is a landing page concept built for the iPhone 15, inspired by modern Apple product pages. The goal of the project was to recreate a clean, interactive, and visually engaging product showcase using modern web technologies.',
-    techStack:['HTML','CSS','JS','React.JS','Tailwind CSS','GSAP'],
+    title:'NuGame',
+    content:'NuGameOne is a web-based platform that bridges traditional gaming with Web3 by integrating the Steam API and Coinbase Wallet. Users can connect their Steam accounts to display gaming profiles and stats, while the Coinbase Wallet integration enables secure on-chain transactions and asset management. The site offers a seamless blend of Web2 and Web3 features, providing gamers with a personalized and interactive experience that incorporates blockchain-based rewards and digital collectibles.',
+    techStack:['HTML','CSS','JS','React.JS','Tailwind CSS'],
     webLink:'https://iphonefifteen.netlify.app/',
-    repo:'https://github.com/mammumammi/Apple_website',
-    vid:'https://res.cloudinary.com/ddbkg48oy/video/upload/so_0,eo_33/v1750918004/Screen_Recording_2025-06-26_at_11.35.26_AM_w10fcv.mov',
+    repo:'https://github.com/mammumammi/NuGame',
+    vid:'https://res.cloudinary.com/ddbkg48oy/video/upload/v1751514250/Screen_Recording_2025-07-03_at_9.13.22_AM_hmyvnb.mov',
     logo:apple
   },{
     title:'Iphone 15 Website',
@@ -60,12 +72,32 @@ const Projects = () => {
   },
 ];
 
+  const [selectedProject, setSelectedProject] = useState(projList[0]);
   const containerRef1 = useRef(null);
   const imgRef1 = useRef(null);
   const containerRef2 = useRef(null);
   const imgRef2 = useRef(null);
   const textRef1 = useRef(null);
   const textRef2 = useRef(null);
+
+  const handleProjectclick = (item) => {
+    setSelectedProject(item);
+    setTimeout( () => {
+      gsap.set([videoRef.current,techRef.current],{
+        autoAlpha:0
+      })
+      gsap.fromTo([videoRef.current,techRef.current],{
+        autoAlpha:0,
+        y:80
+      },{
+        autoAlpha:1,
+        y:0,
+        duration:1.2,
+        ease:'power1.inOut',
+        stagger:0.3
+      })
+    },0)
+  }
 
   useEffect( ()=> {
   const AnimateButton = (el,elimg,text) => {
@@ -149,13 +181,12 @@ const Projects = () => {
         <div className='me md:text-8xl text-6xl flex items-center justify-center py-[50px]'>Projects</div>
         <div className='relative  h-[200vh] md:h-auto '>
             
-        
-            <video src="https://res.cloudinary.com/ddbkg48oy/video/upload/so_0,eo_33/v1750918004/Screen_Recording_2025-06-26_at_11.35.26_AM_w10fcv.mov" autoPlay muted playsInline loop className='w-full items-center rounded-[100px] brightness-50 ' />
-            
-            <div className='absolute top-[8%]  flex items-center '>
+            {selectedProject && <><video src={selectedProject.vid} autoPlay muted playsInline loop className='w-full items-center rounded-[100px] brightness-50 ' ref={videoRef} /> 
+              
+            <div className='absolute top-[8%]  flex items-center ' ref={techRef}>
               <div className=' flex items-center flex-col gap-y-5 normText '>
-                <p className=' md:text-4xl text-3xl '>Iphone 15 Pro Website</p>
-                <p className='w-[60dvw] text-center'>A mock website that features the Iphone 15 Pro and Iphone 15 Pro Max.A high perfomance website that features snappy and modern animations </p>
+                <p className=' md:text-4xl text-3xl '>{selectedProject.title}</p>
+                <p className='w-[60dvw] text-center'>{selectedProject.content}</p>
                 <div className='flex flex-row gap-x-10'>
 
                 
@@ -172,24 +203,29 @@ const Projects = () => {
                 </div>
                 <p className='w-[80dvw] text-center text-4xl'>Tech Stack</p>
                 <div className='flex justify-center w-screen flex-row space-x-5 text-center'>
-                <p >ReactJS</p>
-                <p >GSAP</p>
-                <p >HTML</p>
-                <p >CSS</p>
-                <p >JS</p>
+                {selectedProject.techStack.map( (tech,idx) => (
+                  <p key={idx} >{tech}</p>
+                ))}
                 </div>
               </div>
             </div>
+            </>
+            }
+            
+          
 
 
 
-            <div className='md:w-full   text-white absolute md:top-[65%] md:left-0 top-[55%] left-[10vw] z-20  md:overflow-hidden' >
-              <div className='md:w-[70vw]  md:mx-auto  overflow-x-auto gap-6 px-4 w-[80vw] mx-auto md:h-auto h-[100vh] overflow-y-auto md:overflow-y-none whitespace-nowrap md:space-x-8 space-y-8 scrollbar-hide '>
+            <div className='md:w-full   text-white absolute md:top-[65%] md:left-0 top-[55%] left-[10vw] z-20  ' >
+              <div className='md:w-[70vw]  md:m-auto rounded-3xl  overflow-x-auto gap-6 px-4 w-[80vw] mx-auto md:h-[30vh] h-[100vh] overflow-y-auto md:overflow-y-none whitespace-nowrap md:space-x-8 space-y-8 md:space-y-0 scrollbar-hide bg-black/75 shadow-[0_0_50px_5px_rgba(255,255,255,0.59)] my-10 relative positioned '>
 
+              {width > 768 &&  <span className='align-middle inline-block h-full'></span>}
               
               {[...projList].map((item,index) => (
                 <>
-                <div key={index} className='md:w-[400px]  md:inline-block cursor-pointer md:h-[200px] h-[200px] box  overflow-hidden relative transiion  rounded-[25px] bg-black group' >
+                <div key={index} className='md:w-[400px]  cursor-pointer md:h-[200px] md:inline-flex md:align-middle md:items-center md:justify-center h-[200px] box  overflow-hidden relative transiion  rounded-[25px] bg-black group'
+                onClick={ ()=> handleProjectclick(item)}
+                >
                 <p className='absolute text-center w-full top-[4%] normText text-[16px] opacity-0 group-hover:opacity-100 group-hover:blur-none z-10 font-[1000] duration-300 '>{item.title}</p>
                   
                      
