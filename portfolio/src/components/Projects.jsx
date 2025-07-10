@@ -84,13 +84,13 @@ const Projects = () => {
     setSelectedProject(item);
     setTimeout( () => {
       gsap.set([videoRef.current,techRef.current],{
-        autoAlpha:0
+        opacity:0
       })
       gsap.fromTo([videoRef.current,techRef.current],{
-        autoAlpha:0,
+        opacity:0,
         y:80
       },{
-        autoAlpha:1,
+        opacity:100,
         y:0,
         duration:1.2,
         ease:'power1.inOut',
@@ -190,11 +190,11 @@ const Projects = () => {
                 <div className='flex flex-row gap-x-10'>
 
                 
-                <a href=""><div ref={containerRef1} className='md:w-[50px] duration-300   h-[70px] md:h-[45px] rounded-[25px] items-center justify-center group flex relative'>
+                <a href={selectedProject.webLink}><div ref={containerRef1} className='md:w-[50px] duration-300   h-[70px] md:h-[45px] rounded-[25px] items-center justify-center group flex relative'>
                     <p className='normText absolute text-3xl  text-transparent flex opacity-0 text-center  mx-auto transition-all textAni'ref={textRef1} >Website</p>
                     <img src={arrow} ref={imgRef1} alt="" className='m-auto invert  h-full p-3 md:p-0 ' />
                     </div></a>
-                  <a href=""><div ref={containerRef2} className='md:w-[50px] duration-300   h-[80px] md:h-[45px] rounded-[25px] items-center justify-center group flex relative'>
+                  <a href={selectedProject.repo}><div ref={containerRef2} className='md:w-[50px] duration-300   h-[80px] md:h-[45px] rounded-[25px] items-center justify-center group flex relative'>
                     <p className='normText absolute text-3xl  text-transparent
                     flex opacity-0 text-center  mx-auto transition-all textAni ' ref={textRef2}>Github</p>
                     <img src={github} ref={imgRef2} alt="" className='m-auto invert  h-full p-3 md:p-0 ' />
