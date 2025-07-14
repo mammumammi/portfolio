@@ -7,6 +7,7 @@ import arrow from '../assets/arrow.svg';
 import gsap from 'gsap';
 import india from '../assets/india.svg';
 import smile from '../assets/smile.svg';
+import nuGame from '../assets/nu.svg';
 
 
 import { useGSAP } from '@gsap/react';
@@ -19,6 +20,7 @@ const Projects = () => {
   const contentRef = useRef(null);
   const stackRef = useRef(null);
   const techRef = useRef(null);
+  const movRef = useRef([]);
 
   const  projList = [{
     title:'Iphone 15 Website',
@@ -60,7 +62,7 @@ const Projects = () => {
     webLink:'https://iphonefifteen.netlify.app/',
     repo:'https://github.com/mammumammi/NuGame',
     vid:'https://res.cloudinary.com/ddbkg48oy/video/upload/v1751514250/Screen_Recording_2025-07-03_at_9.13.22_AM_hmyvnb.mov',
-    logo:apple
+    logo:nuGame
   },{
     title:'Iphone 15 Website',
     content:'This is a landing page concept built for the iPhone 15, inspired by modern Apple product pages. The goal of the project was to recreate a clean, interactive, and visually engaging product showcase using modern web technologies.',
@@ -100,6 +102,22 @@ const Projects = () => {
   }
 
   useEffect( ()=> {
+
+    
+    movRef.current.forEach((el,i) => {
+      gsap.set(el,{
+        x:500
+      })
+      gsap.to(el,{
+        x:-500,
+        duration:2,
+        repeat:-1
+      })
+      gsap.set(el,{
+        x:500
+      })
+    })
+
   const AnimateButton = (el,elimg,text) => {
       const shrink = () => {
         gsap.to(el,{
@@ -177,13 +195,13 @@ const Projects = () => {
 
 
   return (
-    <div className='h-full w-screen '>
+    <div className='md:h-[125vh] md:max-h-[150vh] h-auto w-screen md:overflow-y-hidden '>
         <div className='me md:text-8xl text-6xl flex items-center justify-center py-[50px]'>Projects</div>
         <div className='relative  h-[200vh] md:h-auto '>
             
             {selectedProject && <><video src={selectedProject.vid} autoPlay muted playsInline loop className='w-full items-center rounded-[100px] brightness-50 ' ref={videoRef} /> 
               
-            <div className='absolute top-[8%]  flex items-center ' ref={techRef}>
+            <div className='absolute top-[10%] md:h-[50px] md:h-max-[60px] md:py-[10%] flex items-center ' ref={techRef}>
               <div className=' flex items-center flex-col gap-y-5 normText '>
                 <p className=' md:text-4xl text-3xl '>{selectedProject.title}</p>
                 <p className='w-[60dvw] text-center'>{selectedProject.content}</p>
@@ -216,20 +234,22 @@ const Projects = () => {
 
 
 
-            <div className='md:w-full   text-white absolute md:top-[65%] md:left-0 top-[55%] left-[10vw] z-20  ' >
-              <div className='md:w-[70vw]  md:m-auto rounded-3xl  overflow-x-auto gap-6 px-4 w-[80vw] mx-auto md:h-[30vh] h-[100vh] overflow-y-auto md:overflow-y-none whitespace-nowrap md:space-x-8 space-y-8 md:space-y-0 scrollbar-hide bg-black/75 shadow-[0_0_50px_5px_rgba(255,255,255,0.59)] my-10 relative positioned '>
+            <div className='md:w-full   text-white absolute md:top-[65%] md:left-0 top-[55%] left-[5vw] z-20  ' >
+              <div className='md:w-[70vw] w-[90vw]   md:m-auto rounded-3xl  overflow-x-auto gap-6 px-4  mx-auto md:h-[30vh] h-[25vh] overflow-y-auto md:overflow-y-none whitespace-nowrap md:space-x-8  md:space-y-0 scrollbar-hide bg-black/75 shadow-[0_0_50px_5px_rgba(255,255,255,0.59)] my-10 relative positioned ' >
 
-              {width > 768 &&  <span className='align-middle inline-block h-full'></span>}
+              { <span className='align-middle inline-block h-full'></span>}
               
-              {[...projList].map((item,index) => (
+              {[...projList,...projList,...projList].map((item,index) => (
                 <>
-                <div key={index} className='md:w-[400px]  cursor-pointer md:h-[200px] md:inline-flex md:align-middle md:items-center md:justify-center h-[200px] box  overflow-hidden relative transiion  rounded-[25px] bg-black group'
+                <div key={index} className='md:w-[400px] w-[100px]  cursor-pointer md:h-[200px] inline-flex align-middle items-center justify-center h-auto box  md:overflow-hidden relative transiion  rounded-[25px] bg-black group '
                 onClick={ ()=> handleProjectclick(item)}
+                tabIndex={-1} 
+                ref={(el) => (movRef.current[index]=el)}
                 >
                 <p className='absolute text-center w-full top-[4%] normText text-[16px] opacity-0 group-hover:opacity-100 group-hover:blur-none z-10 font-[1000] duration-300 '>{item.title}</p>
                   
                      
-                <img src={item.logo} alt="" className='w-[8vw] flex m-auto items-center justify-center group-hover:blur-[2px] duration-300 relative h-full ' />
+                <img src={item.logo} alt="" className='w-[8vw] md:h-auto flex m-auto items-center justify-center group-hover:blur-[2px] duration-300 relative h-full ' />
             
                 
         </div>
