@@ -106,15 +106,16 @@ const Projects = () => {
     
     movRef.current.forEach((el,i) => {
       gsap.set(el,{
-        x:500
+        x:i*20
       })
       gsap.to(el,{
-        x:-500,
-        duration:2,
-        repeat:-1
-      })
-      gsap.set(el,{
-        x:500
+        x:"-=1000",
+        duration:20,
+        ease:"none",
+        repeat:-1,
+        modifiers:{
+          x:gsap.utils.unitize( x=> parseFloat(x) % 1000)
+        }
       })
     })
 
@@ -255,6 +256,8 @@ const Projects = () => {
         </div>
         </>
               ))}
+
+              
                 </div>
             </div>
         </div>
