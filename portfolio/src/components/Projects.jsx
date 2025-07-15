@@ -196,16 +196,18 @@ const Projects = () => {
 
 
   return (
-    <div className='md:h-[125vh] md:max-h-[150vh] h-auto w-screen md:overflow-y-hidden '>
+    <div className='md:h-[125vh] md:max-h-[150vh] h-[160vh] w-screen md:overflow-y-hidden  '>
         <div className='me md:text-8xl text-6xl flex items-center justify-center py-[50px]'>Projects</div>
-        <div className='relative  h-[200vh] md:h-auto '>
+        <div className='relative  h-[105vh] md:h-auto pt-[70vw] md:pt-0  '>
             
-            {selectedProject && <><video src={selectedProject.vid} autoPlay muted playsInline loop className='w-full items-center rounded-[100px] brightness-50 ' ref={videoRef} /> 
+            {selectedProject && <><video src={selectedProject.vid} autoPlay muted playsInline loop className='md:w-full w-[95vw] h-auto
+            max-h-[40dvh] md:max-h-none
+            ml-[2.5vw] md:ml-0 items-center md:rounded-[100px] rounded-[30px] brightness-50 ' ref={videoRef} /> 
               
-            <div className='absolute top-[10%] md:h-[50px] md:h-max-[60px] md:py-[10%] flex items-center ' ref={techRef}>
-              <div className=' flex items-center flex-col gap-y-5 normText '>
-                <p className=' md:text-4xl text-3xl '>{selectedProject.title}</p>
-                <p className='w-[60dvw] text-center'>{selectedProject.content}</p>
+            <div className='absolute md:top-[10%] top-[15%] md:h-[50px] md:h-max-[60px] md:py-[10%] flex items-center pt-2 ' ref={techRef}>
+              <div className=' flex items-center flex-col gap-y-5 normText pt-[55vw] md:pt-0'>
+                <p className=' md:text-4xl text-3xl text-center  '>{selectedProject.title}</p>
+                <p className='md:w-[70dvw] px-4 mt-[27dvw] md:mt-auto md:p-0  md:text-center text-center'>{selectedProject.content}</p>
                 <div className='flex flex-row gap-x-10'>
 
                 
@@ -221,7 +223,7 @@ const Projects = () => {
                
                 </div>
                 <p className='w-[80dvw] text-center text-4xl'>Tech Stack</p>
-                <div className='flex justify-center w-screen flex-row space-x-5 text-center'>
+                <div className='flex justify-center md:w-screen flex-row space-x-4 space-y-4  w-[80vw] mx-[10vw] md:mx-0 flex-wrap '>
                 {selectedProject.techStack.map( (tech,idx) => (
                   <p key={idx} >{tech}</p>
                 ))}
@@ -235,8 +237,8 @@ const Projects = () => {
 
 
 
-            <div className='md:w-full   text-white absolute md:top-[65%] md:left-0 top-[55%] left-[5vw] z-20  ' >
-              <div className='md:w-[70vw] w-[90vw]   md:m-auto rounded-3xl  overflow-x-auto gap-6 px-4  mx-auto md:h-[30vh] h-[25vh] overflow-y-auto md:overflow-y-none whitespace-nowrap md:space-x-8  md:space-y-0 scrollbar-hide bg-black/75 shadow-[0_0_50px_5px_rgba(255,255,255,0.59)] my-10 relative positioned ' >
+            <div className='md:w-full   text-white absolute md:top-[65%] md:left-0 top-[0%] left-[7.5vw] z-20  ' >
+              <div className='md:w-[70vw] w-[85vw]   md:m-auto rounded-3xl  overflow-x-auto gap-6 px-4  mx-auto md:h-[30vh] h-[20vh] overflow-y-auto md:overflow-y-none whitespace-nowrap md:space-x-8  md:space-y-0 scrollbar-hide bg-black/75 shadow-[0_0_50px_5px_rgba(255,255,255,0.59)] my-10 relative positioned ' >
 
               { <span className='align-middle inline-block h-full'></span>}
               
@@ -250,7 +252,7 @@ const Projects = () => {
                 <p className='absolute text-center w-full top-[4%] normText text-[16px] opacity-0 group-hover:opacity-100 group-hover:blur-none z-10 font-[1000] duration-300 '>{item.title}</p>
                   
                      
-                <img src={item.logo} alt="" className='w-[8vw] md:h-auto flex m-auto items-center justify-center group-hover:blur-[2px] duration-300 relative h-full ' />
+                <img src={item.logo} alt="" className='md:w-[8vw] w-[12vw] md:h-auto flex m-auto items-center justify-center group-hover:blur-[2px] duration-300 relative h-full ' />
             
                 
         </div>
