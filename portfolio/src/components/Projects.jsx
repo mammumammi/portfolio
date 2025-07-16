@@ -106,7 +106,7 @@ const Projects = () => {
 
     const tmain = gsap.timeline();
 
-    width > 768 ? animateWithGsapTimeline(tmain,'.projects',{ y:-50,opacity:1,duration:2,stagger:0.5},{start:'20% 80%',end:'50% 80%',scrub:0.6}) : animateWithGsapTimeline(tmain,'.projects',{ y:-20,opacity:1,duration:2,stagger:0.5},{start:'5% 80%',end:'10% 80%',scrub:0.9})
+    width > 768 ? animateWithGsapTimeline(tmain,'.projects',{ y:-50,opacity:1,duration:2,stagger:0.5},{start:'20% 80%',end:'50% 80%',scrub:0.6}) : animateWithGsapTimeline(tmain,'.projects',{ y:-20,opacity:1,duration:2,stagger:0.5},{start:'5% 70%',end:'10% 80%',scrub:0.9})
     
     width > 768 ? animateWithGsapTimeline(tmain,'.projcar',{ y:-50,opacity:1,duration:3,stagger:0.5},{start:'-10% 80%',end:'20% 80%',scrub:0.9}) : ''
 
