@@ -11,6 +11,7 @@ import nuGame from '../assets/nu.svg';
 import brain from '../assets/brain.svg';
 
 import { useGSAP } from '@gsap/react';
+import { animateWithGsapTimeline } from './animation';
 const Projects = () => {
   const [width, setWidth] = useState(window.innerWidth);
   const [isOpen, setIsOpen] = useState(false);
@@ -102,6 +103,12 @@ const Projects = () => {
   }
 
   useEffect( ()=> {
+
+    const tmain = gsap.timeline();
+
+    width > 768 ? animateWithGsapTimeline(tmain,'.projects',{ y:-50,opacity:1,duration:2,stagger:0.5},{start:'20% 80%',end:'50% 80%',scrub:0.6}) : animateWithGsapTimeline(tmain,'.projects',{ y:-20,opacity:1,duration:2,stagger:0.5},{start:'50% 50%',end:'80% 80%',scrub:0.9})
+    
+    width > 768 ? animateWithGsapTimeline(tmain,'.projcar',{ y:-50,opacity:1,duration:3,stagger:0.5},{start:'-10% 80%',end:'20% 80%',scrub:0.9}) : ''
 
     
     movRef.current.forEach((el,i) => {
@@ -196,7 +203,7 @@ const Projects = () => {
 
 
   return (
-    <div className='md:h-[125vh] md:max-h-[150vh] h-[160vh] w-screen md:overflow-y-hidden  '>
+    <div className='md:h-[125vh] md:max-h-[150vh] h-[160vh] w-screen md:overflow-y-hidden opacity-0 projects '>
         <div className='me md:text-8xl text-6xl flex items-center justify-center py-[50px]'>Projects</div>
         <div className='relative  h-[105vh] md:h-auto pt-[70vw] md:pt-0  '>
             
@@ -237,7 +244,7 @@ const Projects = () => {
 
 
 
-            <div className='md:w-full   text-white absolute md:top-[65%] md:left-0 top-[0%] left-[7.5vw] z-20  ' >
+            <div className='md:w-full md:opacity-0 projcar   text-white absolute md:top-[65%] md:left-0 top-[0%] left-[7.5vw] z-20  ' >
               <div className='md:w-[70vw] w-[85vw]   md:m-auto rounded-3xl  overflow-x-auto gap-6 px-4  mx-auto md:h-[30vh] h-[20vh] overflow-y-auto md:overflow-y-none whitespace-nowrap md:space-x-8  md:space-y-0 scrollbar-hide bg-black/75 shadow-[0_0_50px_5px_rgba(255,255,255,0.59)] my-10 relative positioned ' >
 
               { <span className='align-middle inline-block h-full'></span>}

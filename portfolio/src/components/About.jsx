@@ -21,7 +21,34 @@ const About = () => {
     width > 768 ?  animateWithGsapTimeline(tl,'.wholepage',{ y:-50,opacity:1,duration:2,stagger:0.5},{start:'30% 80%',end:'50% 80%',scrub:0.6}) :
     animateWithGsapTimeline(tl,'.about',{y:-20,opacity:1,duration:2},{start:'20% 60%',end:'45% 80%',scrub:0.9,})
 
+    const tmain = gsap.timeline();
     
+    width < 768 ?  tmain.set('.contact',{
+      opacity:0,
+    }).to('.contact',{
+      y:-20,
+      opacity:1,
+      scrollTrigger:{
+        trigger:'.contact',
+        start:'1115% 50%',
+        end:' 395% 90%',
+        scrub:0.9,
+        
+      }
+    }).to('.contact1',{
+      y:-20,
+      opacity:1,
+      scrollTrigger:{
+        trigger:'.contact',
+        start:'1165% 50%',
+        end:' 395% 90%',
+        scrub:0.9,
+        
+      }
+    })
+    : animateWithGsapTimeline(tmain,'.contact',{y:5,opacity:1,duration:2},{start:'20% 50%',end:'45% 80%',scrub:0.9,})
+
+    width > 768 ? animateWithGsapTimeline(tmain,'.contact1',{y:5,opacity:1,duration:2},{start:'20% 50%',end:'45% 80%',scrub:0.9,}) : ''
     
     if (width < 768){
     
@@ -56,7 +83,7 @@ const About = () => {
         start:'top 8%',
         end:"200% 70%",
         scrub:0.7,
-      
+        
         pin:true,
       }
 
@@ -125,7 +152,8 @@ const About = () => {
   
 
   return (
-    <section className={` wholepage w-full ${width>768 ? 'opacity-0' : ''}`} >
+    <section  >
+      <div className={` wholepage w-full ${width>768 ? 'opacity-0' : ''}`}>
         <div className={`w-full h-auto me md:py-[50px] md:text-9xl text-7xl flex items-center justify-center about ${width<768 ? 'opacity-0' : ''}  `} >About</div>
         <div className='flex flex-col md:flex-row'>
 
@@ -146,12 +174,19 @@ const About = () => {
         </div>
         </div>
         </div>
-        <header className='me text-5xl flex items-center justify-center mt-4'>contact me</header>
-        <div className='flex flex-row space-x-6 items-center justify-center mt-5 glow'>
+        </div>
+        <div>
+          
+        </div>
+        <div className='h-full md:py-[50px]   md:-mt-[150px] -mt-0'>
+        <header className='me text-5xl flex items-center justify-center  contact opacity-0'>contact me</header>
+        <div className='flex flex-row space-x-6 items-center justify-center mt-5 glow contact1 opacity-0'>
             <a className='normText' href='https://wa.link/91lxl1' target='_blank'>Whatsapp</a>
             <a className='normText' href='https://www.linkedin.com/in/aashin-mohammed-a-z-9b06b7273' target='_blank'>LinkedIn</a>
             <a className='normText' href='https://github.com/mammumammi' target='_blank'>Github</a>
             
+        
+        </div>
         </div>
     </section>
   )

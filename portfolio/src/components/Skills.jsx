@@ -6,6 +6,7 @@ import { ScrollTrigger } from 'gsap/all';
 import { delay } from 'motion';
 import dot from '../assets/dot.svg';
 import { div } from 'framer-motion/client';
+import { animateWithGsapTimeline } from './animation';
 gsap.registerPlugin(ScrollTrigger);
 
 const Skills = () => {
@@ -117,6 +118,12 @@ const Skills = () => {
 
   useEffect( ()=> {
      
+
+    const tmain = gsap.timeline();
+    width > 768 ?  animateWithGsapTimeline(tmain,'.section',{ y:-50,opacity:1,duration:2,stagger:0.5},{start:'30% 80%',end:'50% 80%',scrub:0.6}) :
+    animateWithGsapTimeline(tmain,'.section',{y:-20,opacity:1,duration:2},{start:'20% 50%',end:'45% 80%',scrub:0.9,})
+    
+
     gsap.to('.mainrowmain',{
       opacity:1,
       scrollTrigger:{
@@ -549,11 +556,11 @@ const Skills = () => {
   })
 
   return (
-    <section className="relative overflow-hidden ">
+    <section className="relative overflow-hidden opacity-0 section md:mt-15">
       <div className='  md:h-[100vh]  overflow-hidden'>
       {width > 768 ? <div className="top-[40vh] me text-[120px] w-full h-auto flex items-center justify-center m-auto -ml-2 title">
         Skills
-      </div>  : <div className='me text-[70px] flex items-center mx-auto justify-center mt-[100px] maintitle' >Skills</div>}
+      </div>  : <div className='me text-[70px] flex items-center mx-auto justify-center mt-[100px] maintitle' >SKilLs</div>}
       
       {width > 768 && <>{skillpng.map((each) => (
         <p
