@@ -8,7 +8,7 @@ import gsap from 'gsap';
 import india from '../assets/india.svg';
 import smile from '../assets/smile.svg';
 import nuGame from '../assets/nu.svg';
-
+import brain from '../assets/brain.svg';
 
 import { useGSAP } from '@gsap/react';
 const Projects = () => {
@@ -64,13 +64,13 @@ const Projects = () => {
     vid:'https://res.cloudinary.com/ddbkg48oy/video/upload/v1751514250/Screen_Recording_2025-07-03_at_9.13.22_AM_hmyvnb.mov',
     logo:nuGame
   },{
-    title:'Iphone 15 Website',
-    content:'This is a landing page concept built for the iPhone 15, inspired by modern Apple product pages. The goal of the project was to recreate a clean, interactive, and visually engaging product showcase using modern web technologies.',
-    techStack:['HTML','CSS','JS','React.JS','Tailwind CSS','GSAP'],
-    webLink:'https://iphonefifteen.netlify.app/',
-    repo:'https://github.com/mammumammi/Apple_website',
-    vid:'https://res.cloudinary.com/ddbkg48oy/video/upload/so_0,eo_33/v1750918004/Screen_Recording_2025-06-26_at_11.35.26_AM_w10fcv.mov',
-    logo:apple
+    title:'BrainCode',
+    content:' AI/ML Ideathon landing page using React, Tailwind CSS, and deployed it on Netlify. The site promotes a college-level AI/ML event with sections like event overview, timeline, FAQs, and organizer details. I also integrated a chatbot powered by IBM Watsonx to assist users with common queries, enhancing engagement and support. This project showcases my skills in building responsive, user-focused web applications using modern tools.',
+    techStack:['HTML','CSS','JS','React.JS','Tailwind CSS','watsonx','IBM Cloud'],
+    webLink:'https://ai-ml-braincode.netlify.app/',
+    repo:'https://github.com/mammumammi/IBM',
+    vid:'https://res.cloudinary.com/ddbkg48oy/video/upload/v1751514194/Screen_Recording_2025-07-03_at_9.11.46_AM_wuhkzc.mov',
+    logo:brain
   },
 ];
 
