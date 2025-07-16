@@ -12,6 +12,7 @@ import Skills from './components/Skills'
 import { animateWithGsap, animateWithGsapTimeline } from './components/animation'
 import Projects from './components/Projects'
 import Certificates from './components/Certificates'
+import Footer from './components/Footer'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -77,6 +78,7 @@ const App = () => {
     <Skills />
     <Projects/>
     <Certificates />
+    <Footer/>
    </div>
   )
 }

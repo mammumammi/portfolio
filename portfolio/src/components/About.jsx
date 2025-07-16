@@ -152,7 +152,7 @@ const About = () => {
   
 
   return (
-    <section  >
+    <section  id='about'>
       <div className={` wholepage w-full ${width>768 ? 'opacity-0' : ''}`}>
         <div className={`w-full h-auto me md:py-[50px] md:text-9xl text-7xl flex items-center justify-center about ${width<768 ? 'opacity-0' : ''}  `} >About</div>
         <div className='flex flex-col md:flex-row'>

@@ -23,9 +23,10 @@ const Navbar = () => {
         border: "0.5px solid #190e2d"
       }} >
         <nav className='flex md:space-x-18 space-x-5  text-[15px] md:text-[17px]'> 
-            <div className=''>About</div>
-            <div>Projects</div>
-            <div>Resume</div>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="https://resume-aashin.tiiny.site/" target='_blank'>Resume</a>
+            
         </nav>
     </div>
   )

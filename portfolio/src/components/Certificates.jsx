@@ -51,22 +51,23 @@ const Certificates = () => {
         const tm = gsap.timeline();
 
         tm.to('.carousel',{
-            xPercent:-50,
-            duration:15,
+            x:'-4000',
+            duration:90,
+            ease:'none',
             repeat:-1
         }).set('.carousel',{
-            xPercent:50
+            x:'4000'
         })
     },[])
 
   return (
-    <section className='certsection opacity-0'>
-        <header className='me text-white text-center w-screen md:py-[50px] text-4xl md:text-8xl '>CeRtiFicateS</header>
-        <div className='md:mt-[100px] mt-[50px] w-[100vw] mx-auto overflow-x-scroll scrollbar-hide '>
+    <section className='certsection opacity-0 py-[50px]'>
+        <header className='me text-white text-center w-screen  text-4xl md:text-8xl '>CeRtiFicateS</header>
+        <div className='md:my-[50px] mt-[50px] w-[100vw] mx-auto overflow-x-scroll scrollbar-hide '>
             <div className=' carousel flex gap-10 '>
             
-            {imgList.concat(imgList).map( (item,index) => (
-                <div key={index} className='shrink-0 w-[400px] p-5 border-[rgba(228,228,228,0.5)] border-1  rounded-2xl h-[300px]'>
+            {[...imgList.concat(imgList),...imgList.concat(imgList)].map( (item,index) => (
+                <div key={index} className='shrink-0 md:w-[400px] w-[300px] h-[250px] p-5 border-[rgba(228,228,228,0.5)] border-1  rounded-2xl md:h-[300px]'>
                     <img src={item} alt="" className='object-contain w-full h-full' />
                 </div>
             ))}

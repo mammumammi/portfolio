@@ -110,7 +110,7 @@ const Projects = () => {
       opacity:0
     })
 
-    width > 768 ? animateWithGsapTimeline(tmain,'.projects',{ y:-50,opacity:1,duration:2},{start:'20% 80%',end:'50% 80%',scrub:0.6}) : animateWithGsapTimeline(tmain,'.projects',{ y:-20,opacity:1,duration:1},{start:'5% 65%',end:'5% 100%',scrub:0.9,markers:true})
+    width > 768 ? animateWithGsapTimeline(tmain,'.projects',{ y:-50,opacity:1,duration:2},{start:'20% 80%',end:'50% 80%',scrub:0.6}) : animateWithGsapTimeline(tmain,'.projects',{ y:-20,opacity:1,duration:1},{start:'5% 65%',end:'5% 100%',scrub:0.9})
     
     width > 768 ? animateWithGsapTimeline(tmain,'.projcar',{ y:-50,opacity:1,duration:3,stagger:0.5},{start:'-10% 80%',end:'20% 80%',scrub:0.9}) : ''
 
@@ -207,7 +207,7 @@ const Projects = () => {
 
 
   return (
-    <div className='md:h-[125vh] md:max-h-[150vh] h-[160vh] w-screen md:overflow-y-hidden opacity-0 projects '>
+    <div id='projects' className='md:h-[125vh] md:max-h-[150vh] h-[160vh] w-screen md:overflow-y-hidden opacity-0 projects '>
         <div className='me md:text-8xl text-6xl flex items-center justify-center py-[50px]'>Projects</div>
         <div className='relative  h-[105vh] md:h-auto pt-[70vw] md:pt-0  '>
             
