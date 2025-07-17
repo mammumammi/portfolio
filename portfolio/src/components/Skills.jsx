@@ -121,14 +121,14 @@ const Skills = () => {
 
     const tmain = gsap.timeline();
     width > 768 ?  animateWithGsapTimeline(tmain,'.skillsection',{ y:-50,opacity:1,duration:2,stagger:0.5},{start:'30% 80%',end:'50% 80%',scrub:0.6}) :
-    animateWithGsapTimeline(tmain,'.skillsection',{y:-20,opacity:1,duration:2},{start:'top 90%',end:'45% 80%',scrub:0.9})
+    animateWithGsapTimeline(tmain,'.skillsection',{y:-20,opacity:1,duration:2},{start:'top 80%',end:'45% 80%',scrub:0.9})
     
 
     gsap.to('.mainrowmain',{
       opacity:1,
       scrollTrigger:{
         trigger:'maintitle',
-        start:'66% 65%',
+        start:'66% 80%',
         toggleActions:'play pause play reverse',
         
         
