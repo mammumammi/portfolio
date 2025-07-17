@@ -121,7 +121,7 @@ const Skills = () => {
 
     const tmain = gsap.timeline();
     width > 768 ?  animateWithGsapTimeline(tmain,'.skillsection',{ y:-50,opacity:1,duration:2,stagger:0.5},{start:'30% 80%',end:'50% 80%',scrub:0.6}) :
-    animateWithGsapTimeline(tmain,'.skillsection',{y:-20,opacity:1,duration:2},{start:'top 80%',end:'center center',scrub:0.9,markers:true})
+    animateWithGsapTimeline(tmain,'.skillsection',{y:-20,opacity:1,duration:2},{start:'top 90%',end:'center center',scrub:0.9,markers:true})
     
 
     gsap.to('.mainrowmain',{
