@@ -128,7 +128,7 @@ const Skills = () => {
       opacity:1,
       scrollTrigger:{
         trigger:'.maintitle',
-        start:'top 80%',
+        start:'top 70%',
         toggleActions:'play pause play reverse',
         
         
@@ -136,7 +136,7 @@ const Skills = () => {
     })
 
     const tl1= gsap.timeline({scrollTrigger:{
-      trigger:'maintitle',
+      trigger:'.maintitle',
       start:'top 15%',
       end:'80% 20%',
       toggleActions:'play play reverse play',
@@ -144,7 +144,7 @@ const Skills = () => {
       
     },repeat:-1,});
     const t2= gsap.timeline({scrollTrigger:{
-      trigger:'maintitle',
+      trigger:'.maintitle',
       start:'60% 15%',
       end:'80% 20%',
       toggleActions:'play play reverse play',
@@ -152,7 +152,7 @@ const Skills = () => {
       
     },repeat:-1,});
     const t3= gsap.timeline({scrollTrigger:{
-      trigger:'maintitle',
+      trigger:'.maintitle',
       start:'60% 15%',
       end:'80% 20%',
       toggleActions:'play play reverse play',
@@ -160,7 +160,7 @@ const Skills = () => {
       
     },repeat:-1,});
     const t4= gsap.timeline({scrollTrigger:{
-      trigger:'maintitle',
+      trigger:'.maintitle',
       start:'60% 15%',
       end:'80% 20%',
       toggleActions:'play play reverse play',
@@ -168,7 +168,7 @@ const Skills = () => {
       
     },repeat:-1,});
     const t5= gsap.timeline({scrollTrigger:{
-      trigger:'maintitle',
+      trigger:'.maintitle',
       start:'60% 15%',
       end:'80% 20%',
       toggleActions:'play play reverse play',
@@ -176,7 +176,7 @@ const Skills = () => {
       
     },repeat:-1,});
     const t6= gsap.timeline({scrollTrigger:{
-      trigger:'maintitle',
+      trigger:'.maintitle',
       start:'60% 15%',
       end:'80% 20%',
       toggleActions:'play play reverse play',
@@ -184,7 +184,7 @@ const Skills = () => {
       
     },repeat:-1,});
     const tm= gsap.timeline({scrollTrigger:{
-      trigger:'maintitle',
+      trigger:'.maintitle',
       start:'60% 15%',
       end:'80% 20%',
       toggleActions:'play play reverse play',
@@ -192,7 +192,7 @@ const Skills = () => {
       
     },repeat:-1,});
     const mtl= gsap.timeline({scrollTrigger:{
-      trigger:'maintitle',
+      trigger:'.maintitle',
       start:'60% 15%',
       end:'80% 20%',
       toggleActions:'play play reverse play',
@@ -200,35 +200,35 @@ const Skills = () => {
       
     },repeat:-1,});
     const mt2= gsap.timeline({scrollTrigger:{
-      trigger:'maintitle',
+      trigger:'.maintitle',
       start:'60% 15%',end:'80% 20%',
       toggleActions:'play play reverse play',
       
       
     },repeat:-1,});
     const mt3= gsap.timeline({scrollTrigger:{
-      trigger:'maintitle',
+      trigger:'.maintitle',
       start:'60% 15%',end:'80% 20%',
       toggleActions:'play play reverse play',
       
       
     },repeat:-1,});
     const mt4= gsap.timeline({scrollTrigger:{
-      trigger:'maintitle',
+      trigger:'.maintitle',
       start:'60% 15%',end:'80% 20%',
       toggleActions:'play play reverse play',
       
       
     },repeat:-1,});
     const mt5= gsap.timeline({scrollTrigger:{
-      trigger:'maintitle',
+      trigger:'.maintitle',
       start:'60% 15%',end:'80% 20%',
       toggleActions:'play play play reverse',
       
       
     },epeat:-1,});
     const mt6= gsap.timeline({scrollTrigger:{
-      trigger:'maintitle',
+      trigger:'.maintitle',
       start:'60% 15%',end:'80% 20%',
       toggleActions:'play play play reverse',
       
