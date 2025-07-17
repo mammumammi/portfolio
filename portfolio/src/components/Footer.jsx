@@ -70,11 +70,11 @@ const Footer = () => {
                 ))}
             </div>
             </div>
-            <div className=' md:w-1/4 flex flex-col space-y-2 pr-5'>
-            <p className='mb-5'>Address</p>
+            <div className=' md:w-1/4 flex flex-col space-y-1 pr-5'>
+            <p className='mb-5 mt-5 md:mt-0 md:mb-0'>Address</p>
             <p>Aashinas</p>
-            <p>Highway Gardens,16Th Mile Stone</p>
-            <p>Thonnakkal P.O,695317</p>
+            <p>Highway Gardens,16Th Mile Stone,</p>
+            <p>Thonnakkal P.O:695317,</p>
             <p>Thiruvananthapuram,Kerala</p>
             </div>
         </div>
