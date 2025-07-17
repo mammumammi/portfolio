@@ -158,7 +158,7 @@ const About = () => {
         <div className='flex flex-col md:flex-row'>
 
         <div className='md:w-[30vw] w-[70vw] md:top-0  transform translate-x-[20%] translate-y-1/8 md:transform-none md:translate-0'>
-        <img src="./me.jpg" alt="" className={`px-5 mb-5 w-auto h-auto ${width<768? 'opacity-0':''}`} />
+        <img src="https://res.cloudinary.com/ddbkg48oy/image/upload/v1752769919/me_s0wp1t.jpg" alt="" className={`px-5 mb-5 w-auto h-auto ${width<768? 'opacity-0':''}`} />
        
         </div>
         
@@ -179,7 +179,7 @@ const About = () => {
           
         </div>
         <div className='h-full md:py-[50px]   md:-mt-[150px] -mt-0'>
-        <header className='me text-5xl flex items-center justify-center  contact opacity-0'>contact me</header>
+        <header className='me md:text-5xl text-4xl flex items-center justify-center  contact opacity-0 mt-10 md:mt-0'>contact me</header>
         <div className='flex flex-row space-x-6 items-center justify-center mt-5 glow contact1 opacity-0'>
             <a className='normText' href='https://wa.link/91lxl1' target='_blank'>Whatsapp</a>
             <a className='normText' href='https://www.linkedin.com/in/aashin-mohammed-a-z-9b06b7273' target='_blank'>LinkedIn</a>

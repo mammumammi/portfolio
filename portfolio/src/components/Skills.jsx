@@ -120,8 +120,8 @@ const Skills = () => {
      
 
     const tmain = gsap.timeline();
-    width > 768 ?  animateWithGsapTimeline(tmain,'.section',{ y:-50,opacity:1,duration:2,stagger:0.5},{start:'30% 80%',end:'50% 80%',scrub:0.6}) :
-    animateWithGsapTimeline(tmain,'.section',{y:-20,opacity:1,duration:2},{start:'20% 50%',end:'45% 80%',scrub:0.9,})
+    width > 768 ?  animateWithGsapTimeline(tmain,'.skillsection',{ y:-50,opacity:1,duration:2,stagger:0.5},{start:'30% 80%',end:'50% 80%',scrub:0.6}) :
+    animateWithGsapTimeline(tmain,'.skillsection',{y:-20,opacity:1,duration:2},{start:'top 80%',end:'center center',scrub:0.9,markers:true})
     
 
     gsap.to('.mainrowmain',{
@@ -137,8 +137,8 @@ const Skills = () => {
 
     const tl1= gsap.timeline({scrollTrigger:{
       trigger:'maintitle',
-      start:'60% 15%',
-      end:'80% 20%',
+      start:'top 60%',
+      end:'bottom top',
       toggleActions:'play play reverse play',
       
       
@@ -556,11 +556,11 @@ const Skills = () => {
   })
 
   return (
-    <section className="relative overflow-hidden opacity-0 section md:mt-15">
+    <section className="relative overflow-hidden opacity-0 skillsection md:mt-15 ">
       <div className='  md:h-[100vh]  overflow-hidden'>
       {width > 768 ? <div className="top-[40vh] me text-[120px] w-full h-auto flex items-center justify-center m-auto -ml-2 title">
         Skills
-      </div>  : <div className='me text-[70px] flex items-center mx-auto justify-center mt-[100px] maintitle' >SKilLs</div>}
+      </div>  : <div className='me text-[70px] flex items-center mx-auto justify-center mt-[50px] maintitle' >SKilLs</div>}
       
       {width > 768 && <>{skillpng.map((each) => (
         <p

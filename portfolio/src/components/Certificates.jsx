@@ -18,7 +18,7 @@ import { animateWithGsapTimeline } from './animation';
 
 const Certificates = () => {
 
-    const imgList =[ibm1,ibm2,ibm3,dsa,g1,g2,g3,g4,g5,g6,g7,g8,nptel];
+    const imgList =['https://res.cloudinary.com/ddbkg48oy/image/upload/v1752769940/DSAPlacements_exczwy.jpg','https://res.cloudinary.com/ddbkg48oy/image/upload/v1752769941/g1_vgseje.png','https://res.cloudinary.com/ddbkg48oy/image/upload/v1752769941/g2_mmyxrg.png','https://res.cloudinary.com/ddbkg48oy/image/upload/v1752769942/g4_rfity5.png','https://res.cloudinary.com/ddbkg48oy/image/upload/v1752769942/g5_v2cn0d.png','https://res.cloudinary.com/ddbkg48oy/image/upload/v1752769942/g3_m9ujuo.png','https://res.cloudinary.com/ddbkg48oy/image/upload/v1752769943/g7_bmylxz.png','https://res.cloudinary.com/ddbkg48oy/image/upload/v1752769943/g6_cbmsre.png','https://res.cloudinary.com/ddbkg48oy/image/upload/v1752769944/g9_y80hk6.png','https://res.cloudinary.com/ddbkg48oy/image/upload/v1752769944/g8_tkfvtd.png','https://res.cloudinary.com/ddbkg48oy/image/upload/v1752769946/ibm1_jorscn.png','https://res.cloudinary.com/ddbkg48oy/image/upload/v1752769946/ibm3_vkrwc2.png','https://res.cloudinary.com/ddbkg48oy/image/upload/v1752769947/ibm2_rv1fbu.png','https://res.cloudinary.com/ddbkg48oy/image/upload/v1752769949/nptel_t8dob2.png'];
     const tl = gsap.timeline();
     useEffect( ()=> {
 
