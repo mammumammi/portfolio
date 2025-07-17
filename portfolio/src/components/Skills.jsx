@@ -128,7 +128,7 @@ const Skills = () => {
       opacity:1,
       scrollTrigger:{
         trigger:'maintitle',
-        start:'66% 80%',
+        start:'top 80%',
         toggleActions:'play pause play reverse',
         
         
@@ -137,7 +137,7 @@ const Skills = () => {
 
     const tl1= gsap.timeline({scrollTrigger:{
       trigger:'maintitle',
-      start:'60% 15%',
+      start:'top 15%',
       end:'80% 20%',
       toggleActions:'play play reverse play',
       
