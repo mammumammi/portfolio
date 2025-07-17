@@ -127,7 +127,7 @@ const Skills = () => {
     gsap.to('.mainrowmain',{
       opacity:1,
       scrollTrigger:{
-        trigger:'maintitle',
+        trigger:'.maintitle',
         start:'top 80%',
         toggleActions:'play pause play reverse',
         
