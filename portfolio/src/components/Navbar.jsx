@@ -11,12 +11,13 @@ const Navbar = () => {
     {
         y:0,
         opacity:1,
-        delay:1.5,
-        duration:0.8
+        delay:4,
+        duration:0.8,
+        
     })
     })
   return (
-    <div className=' mt-2 py-2 flex justify-center items-center fixed z-50 bgcolor left-1/2 transform -translate-x-1/2 navbg px-5 nav rounded-3xl text-md' style={{
+    <div className=' mt-2 py-2 flex justify-center items-center  fixed z-50 bgcolor left-1/2 transform -translate-x-1/2 navbg px-5 nav rounded-3xl text-md' style={{
         backgroundColor: "rgba(24,19,53,0.25)",
         backdropFilter: "blur(10px)",
         WebkitBackdropFilter: "blur(10px)",

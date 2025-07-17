@@ -74,6 +74,20 @@ const App = () => {
                 },{
                   autoAlpha:1,y:0,duration:1.2,ease:'power2.out'
                 })
+                const tl = gsap.timeline({ 
+                });
+                 
+               
+             
+             
+               tl.to(introRef.current,
+               {
+               opacity:1,
+               y:30,
+               delay:0.3,
+               duration:1.5,
+               scale:1
+               })
               }
               
             }
@@ -87,6 +101,20 @@ const App = () => {
             },{
               autoAlpha:1,y:0,duration:1.2,ease:'power2.out'
             })
+            const tl = gsap.timeline({ 
+            });
+             
+           
+         
+         
+           tl.to(introRef.current,
+           {
+           opacity:1,
+           y:30,
+           delay:0.3,
+           duration:1.5,
+           scale:1
+           })
           }
         }
       },finalDelay)
@@ -146,20 +174,7 @@ const App = () => {
 
   useGSAP( ()=>{
     
-    const tl = gsap.timeline({ 
-   });
     
-  
-
-
-  tl.to(introRef.current,
-  {
-  opacity:1,
-  y:30,
-  delay:0.3,
-  duration:1.5,
-  scale:1
-  })
   const scrollTimeline = gsap.timeline({
     scrollTrigger:{
       trigger:introRef.current,
@@ -191,7 +206,7 @@ const App = () => {
 
     
     
-    <div className='overflow-x-hidden overflow-y-hidden'
+    <div className='overflow-x-hidden '
     ref={mainContentRef}
     >
     
