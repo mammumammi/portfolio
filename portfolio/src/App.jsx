@@ -62,12 +62,14 @@ const App = () => {
                                 ScrollTrigger.refresh();
                                 setIsAnimationReady(true);
                                 gsap.to(introRef.current, {
-                                    opacity: 1,
+                                    opacity: 0,
+                                    scale:1.5,
+                                    y:-10,
                                     scrollTrigger: {
                                         trigger: introRef.current,
                                         start: 'bottom 75%',
-                                        end: 'bottom top',
-                                        scrub: true,
+                                        end: 'bottom 95%',
+                                        scrub: 0.9,
                                     }
                                 });
                             }
