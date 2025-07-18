@@ -62,7 +62,7 @@ const App = () => {
                                 ScrollTrigger.refresh();
                                 setIsAnimationReady(true);
                                 gsap.to(introRef.current, {
-                                    opacity: 0,
+                                    opacity: 1,
                                     scrollTrigger: {
                                         trigger: introRef.current,
                                         start: 'bottom 75%',
@@ -74,8 +74,8 @@ const App = () => {
                         });
                         
                         revealTl.fromTo(introRef.current,
-                            { autoAlpha: 0, y: 50, scale: 0.9, },
-                            { autoAlpha: 1, y: 30, scale: 1, duration: 1.5, ease: 'power2.out', }
+                            { opacity: 0, y: 50, scale: 0.9, },
+                            { autoAlpha: 1, opacity:1,y: 30, scale: 1, duration: 1.5, ease: 'power2.out', }
                         )
                         .from(".fade-in-section", {
                             autoAlpha: 0,
