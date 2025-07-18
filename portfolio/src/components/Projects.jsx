@@ -207,7 +207,7 @@ const Projects = () => {
 
 
   return (
-    <div id='projects' className='md:h-[125vh] md:max-h-[150vh] h-[160vh] w-screen md:overflow-y-hidden opacity-0 projects '>
+    <div id='projects' className='md:h-full  h-[160vh] w-screen md:overflow-y-hidden opacity-0 projects '>
         <div className='me md:text-8xl text-6xl flex items-center justify-center py-[50px]'>Projects</div>
         <div className='relative  h-[105vh] md:h-auto pt-[70vw] md:pt-0  '>
             
