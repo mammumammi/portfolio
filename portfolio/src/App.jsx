@@ -102,14 +102,14 @@ const App = () => {
         return () => window.removeEventListener('load', handleWindowLoad);
     }, [width]);
 
-    // ✅ NEW: Dedicated hook for the "Gm" preloader animation
+    // ✅ NEW: Dedicated hook for the "gm" preloader animation
     useGSAP(() => {
         if (width < 768 && singleGmTextRef.current) {
             gsap.fromTo(singleGmTextRef.current, 
                 { opacity: 0, scale: 0.8 },
                 {
                     opacity: 1,
-                    scale: 1,
+                    scaleX: 1,
                     duration: 1.5,
                     ease: 'power1.inOut',
                     repeat: -1,
