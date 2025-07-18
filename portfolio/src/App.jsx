@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import './index.css';
 import Navbar from './components/Navbar';
 import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 import { MouseParallax } from 'react-just-parallax';
 import About from './components/About';
 import { ScrollTrigger } from 'gsap/all';
@@ -60,37 +61,21 @@ const App = () => {
                             onComplete: () => {
                                 ScrollTrigger.refresh();
                                 setIsAnimationReady(true);
-
-                                // Create the scroll-away animation after everything is revealed
                                 gsap.to(introRef.current, {
-                                    opacity: 1,
-                                    scale:1.5,
-                                    y:-5,
+                                    opacity: 0,
                                     scrollTrigger: {
                                         trigger: introRef.current,
-                                        start: 'center 45%',
+                                        start: 'bottom 75%',
                                         end: 'bottom top',
-                                        scrub: 0.8,
+                                        scrub: true,
                                     }
                                 });
                             }
                         });
                         
-                        // ✅ Use fromTo for an explicit animation
                         revealTl.fromTo(introRef.current,
-                            { // FROM state
-                                autoAlpha: 0,
-                                y: 50,
-                                scale: 0.9,
-                            },
-                            { // TO state
-                                autoAlpha: 1,
-                                opacity:1,
-                                y: 30,
-                                scale: 1,
-                                duration: 1.5,
-                                ease: 'power2.out',
-                            }
+                            { autoAlpha: 0, y: 50, scale: 0.9, },
+                            { autoAlpha: 1, y: 30, scale: 1, duration: 1.5, ease: 'power2.out', }
                         )
                         .from(".fade-in-section", {
                             autoAlpha: 0,
@@ -108,14 +93,30 @@ const App = () => {
       
         if (width > 768 && videoRef.current) {
              videoRef.current.play().catch(e => console.error("Video play failed", e));
-        } else if (width < 768 && singleGmTextRef.current) {
-            gsap.to(singleGmTextRef.current, { opacity: 1, scale: 1, duration: 1.5, ease: 'power1.inOut', repeat: -1, yoyo: true });
+        } else if (width < 768) {
             setTimeout(() => { if (!windowLoadFired) fadeOutPreloader(); }, MAX_PRELOADER_DISPLAY_TIME);
         } else {
             setTimeout(() => { if (!windowLoadFired) fadeOutPreloader(); }, MAX_PRELOADER_DISPLAY_TIME);
         }
   
         return () => window.removeEventListener('load', handleWindowLoad);
+    }, [width]);
+
+    // ✅ NEW: Dedicated hook for the "Gm" preloader animation
+    useGSAP(() => {
+        if (width < 768 && singleGmTextRef.current) {
+            gsap.fromTo(singleGmTextRef.current, 
+                { opacity: 0, scale: 0.8 },
+                {
+                    opacity: 1,
+                    scale: 1,
+                    duration: 1.5,
+                    ease: 'power1.inOut',
+                    repeat: -1,
+                    yoyo: true
+                }
+            );
+        }
     }, [width]);
 
     return (
@@ -125,7 +126,7 @@ const App = () => {
                     {width > 768 ? (
                         <video src="https://res.cloudinary.com/ddbkg48oy/video/upload/v1752773747/vid_dvdsee.mp4" className='w-[160px] h-[160px] object-contain' ref={videoRef} autoPlay muted loop playsInline></video>
                     ) : (
-                        <p className='font-[CDTSlanted] text-8xl text-center opacity-0' ref={singleGmTextRef}>Gm</p>
+                        <p className='font-[CDTSlanted] text-8xl text-center' ref={singleGmTextRef}>Gm</p>
                     )}
                 </div>
             )}
