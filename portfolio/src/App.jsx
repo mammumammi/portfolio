@@ -125,7 +125,7 @@ const App = () => {
                     {width > 768 ? (
                         <video src="https://res.cloudinary.com/ddbkg48oy/video/upload/v1752773747/vid_dvdsee.mp4" className='w-[160px] h-[160px] object-contain' ref={videoRef} autoPlay muted loop playsInline></video>
                     ) : (
-                        <p className='font-[CDTSlanted] text-8xl text-center' ref={singleGmTextRef}>Gm</p>
+                        <p className='font-[CDTSlanted] text-8xl text-center opacity-0' ref={singleGmTextRef}>Gm</p>
                     )}
                 </div>
             )}
