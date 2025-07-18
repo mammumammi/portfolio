@@ -67,7 +67,7 @@ const App = () => {
                                     y:-10,
                                     scrollTrigger: {
                                         trigger: introRef.current,
-                                        start: 'bottom 75%',
+                                        start: width < 768 ? 'bottom 15%' : 'bottom 75%',
                                         end: 'bottom 95%',
                                         scrub: 0.9,
                                     }
