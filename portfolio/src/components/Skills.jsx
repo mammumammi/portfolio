@@ -9,7 +9,7 @@ import { div } from 'framer-motion/client';
 import { animateWithGsapTimeline } from './animation';
 gsap.registerPlugin(ScrollTrigger);
 
-const Skills = () => {
+const Skills = ({isReady}) => {
   const [width, setWidth] = useState(window.innerWidth);
   const circleRef = useRef(null);
   const skillRef = useRef(null);
@@ -46,6 +46,8 @@ const Skills = () => {
   // GSAP Animations
   useGSAP(() => {
     // Rotation animations
+
+    
     gsap.to(skillRef.current, {
       opacity: 1,
       x:0,
@@ -118,7 +120,8 @@ const Skills = () => {
 
   useEffect( ()=> {
      
-
+    if (!isReady) return;
+    
     const tmain = gsap.timeline();
     width > 768 ?  animateWithGsapTimeline(tmain,'.skillsection',{ y:-50,opacity:1,duration:2,stagger:0.5},{start:'30% 80%',end:'50% 80%',scrub:0.6}) :
     animateWithGsapTimeline(tmain,'.skillsection',{y:-20,opacity:1,duration:2},{start:'top 80%',end:'45% 80%',scrub:0.9})

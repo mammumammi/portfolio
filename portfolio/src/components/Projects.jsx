@@ -222,14 +222,14 @@ const Projects = () => {
                 <div className='flex flex-row gap-x-10'>
 
                 
-                <a href={selectedProject.webLink}><div ref={containerRef1} className='md:w-[50px] duration-300   h-[70px] md:h-[45px] rounded-[25px] items-center justify-center group flex relative'>
-                    <p className='normText absolute text-3xl  text-transparent flex opacity-0 text-center  mx-auto transition-all textAni'ref={textRef1} >Website</p>
+                <a href={selectedProject.webLink} target='_blank'><div ref={containerRef1} target='_blank' className='md:w-[50px] duration-300   h-[70px] md:h-[45px] rounded-[25px] items-center justify-center group flex relative'>
+                    <p className='normText absolute text-3xl  text-transparent flex opacity-0 text-center  mx-auto transition-all textAni' target="_blank" ref={textRef1} >Website</p>
                     <img src={arrow} ref={imgRef1} alt="" className='m-auto invert  h-full p-3 md:p-0 ' />
                     </div></a>
-                  <a href={selectedProject.repo}><div ref={containerRef2} className='md:w-[50px] duration-300   h-[80px] md:h-[45px] rounded-[25px] items-center justify-center group flex relative'>
+                  <a href={selectedProject.repo} target="_blank"><div ref={containerRef2} className='md:w-[50px] duration-300   h-[80px] md:h-[45px] rounded-[25px] items-center justify-center group flex relative'>
                     <p className='normText absolute text-3xl  text-transparent
                     flex opacity-0 text-center  mx-auto transition-all textAni ' ref={textRef2}>Github</p>
-                    <img src={github} ref={imgRef2} alt="" className='m-auto invert  h-full p-3 md:p-0 ' />
+                    <img src={github} ref={imgRef2} target="_blank" alt="" className='m-auto invert  h-full p-3 md:p-0 ' />
                     </div></a>
                
                 </div>
