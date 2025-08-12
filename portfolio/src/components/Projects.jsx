@@ -22,6 +22,7 @@ const Projects = () => {
   const stackRef = useRef(null);
   const techRef = useRef(null);
   const movRef = useRef([]);
+  const mobileRefContent = useRef(null)
 
   const  projList = [{
     title:'Iphone 15 Website',
@@ -102,9 +103,37 @@ const Projects = () => {
     },0)
   }
 
+  useEffect( ()=>{
+    let tween;
+    if(mobileRefContent.current && width < 768){
+      const el = mobileRefContent.current;
+
+      el.scrollTop = 0;
+
+      
+
+      tween = gsap.to(el,{
+        scrollTop:()=> el.scrollHeight - el.clientHeight,
+        duration:10,
+        ease:"none",
+        yoyo:true,
+        repeatDelay:3,
+        repeat:1
+      })
+    }
+    return () =>{ 
+      if (tween){
+
+        tween.kill();}
+      }
+  },[selectedProject,width])
+
   useEffect( ()=> {
 
     const tmain = gsap.timeline();
+
+    
+
 
     gsap.set('.projects',{
       opacity:0
@@ -209,16 +238,16 @@ const Projects = () => {
   return (
     <div id='projects' className='md:h-full  h-[160vh] w-screen md:overflow-y-hidden opacity-0 projects '>
         <div className='me md:text-8xl text-6xl flex items-center justify-center py-[50px]'>Projects</div>
-        <div className='relative  h-[105vh] md:h-auto pt-[70vw] md:pt-0  '>
+        <div className='relative  h-[140vh] md:h-auto pt-[70vw] md:pt-0  '>
             
             {selectedProject && <><video src={selectedProject.vid} autoPlay muted playsInline loop className='md:w-full w-[95vw] h-auto
             max-h-[40dvh] md:max-h-none
             ml-[2.5vw] md:ml-0 items-center md:rounded-[100px] rounded-[30px] brightness-50 ' ref={videoRef} /> 
               
-            <div className='absolute md:top-[10%] top-[15%] md:h-[50px] md:h-max-[60px] md:py-[10%] flex items-center pt-2 ' ref={techRef}>
+            <div className='absolute md:top-[18%] top-[15%] md:h-[50px] md:h-max-[60px] md:py-[10%] flex items-center pt-2 ' ref={techRef}>
               <div className=' flex items-center flex-col gap-y-5 normText pt-[55vw] md:pt-0'>
                 <p className=' md:text-4xl text-3xl text-center  '>{selectedProject.title}</p>
-                <p className='md:w-[70dvw] px-4 mt-[27dvw] md:mt-auto md:p-0  md:text-center text-center'>{selectedProject.content}</p>
+                <p className='md:w-[70dvw] px-4 mt-[27dvw] md:mt-auto md:p-0  md:text-center text-center overflow-y-scroll h-[40vh] md:h-auto scrollbar-hide ' ref={mobileRefContent}>{selectedProject.content}</p>
                 <div className='flex flex-row gap-x-10'>
 
                 
@@ -248,7 +277,7 @@ const Projects = () => {
 
 
 
-            <div className='md:w-full md:opacity-0 projcar   text-white absolute md:top-[65%] md:left-0 top-[0%] left-[7.5vw] z-20  ' >
+            <div className='md:w-full md:opacity-0 projcar   text-white absolute md:top-[70%] md:left-0 top-[0%] left-[7.5vw] z-20  ' >
               <div className='md:w-[70vw] w-[85vw]   md:m-auto rounded-3xl  overflow-x-auto gap-6 px-4  mx-auto md:h-[30vh] h-[20vh] overflow-y-auto md:overflow-y-none whitespace-nowrap md:space-x-8  md:space-y-0 scrollbar-hide bg-black/75 shadow-[0_0_50px_5px_rgba(255,255,255,0.59)] my-10 relative positioned ' >
 
               { <span className='align-middle inline-block h-full'></span>}

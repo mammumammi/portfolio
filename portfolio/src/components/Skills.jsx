@@ -559,8 +559,8 @@ const Skills = ({isReady}) => {
   })
 
   return (
-    <section className="relative overflow-hidden opacity-0 skillsection md:mt-15 ">
-      <div className='  md:h-[100vh]  overflow-hidden'>
+    <section className="relative  opacity-0 skillsection md:mt-15 ">
+      <div className='  md:h-[120vh]  overflow-hidden'>
       {width > 768 ? <div className="top-[40vh] me text-[120px] w-full h-auto flex items-center justify-center m-auto -ml-2 title">
         Skills
       </div>  : <div className='me text-[70px] flex items-center mx-auto justify-center mt-[50px] maintitle' >SKilLs</div>}

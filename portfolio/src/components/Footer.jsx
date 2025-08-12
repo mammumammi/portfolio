@@ -48,37 +48,62 @@ const Footer = () => {
         }
     ]
   return (
-    <footer className='border-t-1  border-gray-500 md:p-10 p-5'>
-        <div className='flex md:flex-1/4 flex-col md:flex-row normText text-[14px] text-gray-400 space-y-1'>
-            <div className='rows1 md:w-1/4 flex flex-col space-y-5 md:pr-10'>
-                <p className='text-[20px]'>Aashin Mohammed A Z</p>
-                <p >Feel Free to contact me for Work related queries</p>
-                <p>Phone: <a href="tel:+918848584363">8848584363</a></p>
-            </div>
-            <div className='flex flex-row md:w-1/2 mt-5 md:mt-0'>
-            <div className='rows2 md:w-1/2 flex flex-col space-y-5 pr-10 '>
-                <p className='mb-5'>Social Media</p>
-                {socialhandles.map( (item,id) => (
-                    
-                    <a key={id} href={item.link} className='flex flex-row space-x-2'><img src={item.image} className='inline-block  invert w-auto' alt="" /><p>{item.title}</p></a>
-                ))}
-            </div>
-            <div className='rows2 md:w-1/2 flex flex-col space-y-5 pr-10 '>
-                <p className='mb-5'>Professional Social Media</p>
-                {socialhandles2.map( (item,id) => (
-                    <a key={id} href={item.link} className='flex flex-row space-x-2'><img src={item.image} alt="" className='w-auto inline-block invert ' /><p>{item.title}</p></a>
-                ))}
-            </div>
-            </div>
-            <div className=' md:w-1/4 flex flex-col space-y-1 pr-5'>
-            <p className='mb-5 mt-5 md:mt-0 md:mb-0'>Address</p>
-            <p>Aashinas</p>
-            <p>Highway Gardens,16Th Mile Stone,</p>
-            <p>Thonnakkal P.O:695317,</p>
-            <p>Thiruvananthapuram,Kerala</p>
-            </div>
-        </div>
-    </footer>
+    <footer className="border-t border-gray-500 md:p-10 p-5 w-full">
+  <div className="flex flex-col md:flex-row normText text-[14px] text-gray-400 
+                  space-y-5 md:space-y-0 md:justify-between w-full">
+
+    {/* Left Column */}
+    <div className="rows1 flex flex-col space-y-5  md:w-2/3">
+      <p className="text-[20px]">Aashin Mohammed A Z</p>
+      <p>Feel Free to contact me for Work related queries</p>
+      <p>
+        Mail:{" "}
+        <a
+          href="mailto:ashinmammu@gmail.com"
+          className="underline hover:text-white"
+        >
+          ashinmammu@gmail.com
+        </a>
+      </p>
+    </div>
+
+    {/* Right Columns Wrapper */}
+    <div className="flex flex-col md:flex-row md:space-x-10 md:w-2/3 flex-grow">
+      
+      {/* Social Media */}
+      <div className="rows2 flex flex-col space-y-5 md:flex-1">
+        <p className="mb-5">Social Media</p>
+        {socialhandles.map((item, id) => (
+          <a
+            key={id}
+            href={item.link}
+            className="flex flex-row items-center space-x-2"
+          >
+            <img src={item.image} className="invert w-5 h-5" alt="" />
+            <p>{item.title}</p>
+          </a>
+        ))}
+      </div>
+
+      {/* Professional Social Media */}
+      <div className="rows2 flex flex-col space-y-5 md:flex-1">
+        <p className="mb-5">Professional Social Media</p>
+        {socialhandles2.map((item, id) => (
+          <a
+            key={id}
+            href={item.link}
+            className="flex flex-row items-center space-x-2"
+          >
+            <img src={item.image} alt="" className="invert w-5 h-5" />
+            <p>{item.title}</p>
+          </a>
+        ))}
+      </div>
+
+    </div>
+  </div>
+</footer>
+
   )
 }
 

@@ -67,7 +67,7 @@ const App = () => {
                                     y:-10,
                                     scrollTrigger: {
                                         trigger: introRef.current,
-                                        start: width < 768 ? 'bottom 15%' : 'bottom 75%',
+                                        start: width < 768 ? 'bottom 45%' : 'bottom 75%',
                                         end: 'bottom 95%',
                                         scrub: 0.9,
                                     }
@@ -136,7 +136,7 @@ const App = () => {
             <Navbar isReady={isAnimationReady} />
     
             <div className='overflow-x-hidden' ref={mainContentRef}>
-                <div className='w-full md:h-[90vh] h-[60vh] flex justify-center items-center overflow-hidden z-10'>
+                <div className='w-full h-[90vh] flex justify-center items-center overflow-hidden z-10'>
                     <MouseParallax speed={-50}>
                         <div className='text-5xl top-1/3 md:top-0 md:text-7xl md:px-0 me intro text-center flex justify-center items-center py-0 md:py-[330px] leading-normal px-[5px]' ref={introRef}>
                             Aashin Mohammed A Z
