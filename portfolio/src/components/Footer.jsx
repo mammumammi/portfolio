@@ -87,7 +87,7 @@ const Footer = () => {
 
       {/* Professional Social Media */}
       <div className="rows2 flex flex-col space-y-5 md:flex-1">
-        <p className="mb-5">Professional Social Media</p>
+        <p className=" md:mt-0 mt-5 mb-5">Professional Social Media</p>
         {socialhandles2.map((item, id) => (
           <a
             key={id}
