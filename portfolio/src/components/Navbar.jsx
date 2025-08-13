@@ -30,7 +30,7 @@ const Navbar = ({isReady}) => {
         <nav className='flex md:space-x-18 space-x-5  text-[15px] md:text-[17px]'> 
             <a href="#about">About</a>
             <a href="#projects">Projects</a>
-            <a href="https://resume-aashin.tiiny.site/" target='_blank'>Resume</a>
+            <a href="src/assets/aashinResume.pdf" target='_blank'>Resume</a>
             
         </nav>
     </div>
