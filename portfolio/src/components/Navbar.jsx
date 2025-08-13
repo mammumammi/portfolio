@@ -30,7 +30,7 @@ const Navbar = ({isReady}) => {
         <nav className='flex md:space-x-18 space-x-5  text-[15px] md:text-[17px]'> 
             <a href="#about">About</a>
             <a href="#projects">Projects</a>
-            <a href="src/assets/aashinResume.pdf" target='_blank'>Resume</a>
+            <a href="https://drive.google.com/file/d/1TmYKt_zqhXQW9xTq4kuEhb3dThAsAICp/view?usp=sharing" target='_blank'>Resume</a>
             
         </nav>
     </div>
