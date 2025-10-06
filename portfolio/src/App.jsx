@@ -27,7 +27,7 @@ const App = () => {
     const [isAnimationReady, setIsAnimationReady] = useState(false);
 
     const MIN_PRELOADER_DISPLAY_TIME = 1500;
-    const MAX_PRELOADER_DISPLAY_TIME = 8000;
+    const MAX_PRELOADER_DISPLAY_TIME = 6000;
 
     useEffect(() => {
         gsap.set(".fade-in-section, .intro", { autoAlpha: 0 });
@@ -93,13 +93,17 @@ const App = () => {
         
         window.addEventListener('load', handleWindowLoad);
       
-        if (width > 768 && videoRef.current) {
-             videoRef.current.play().catch(e => console.error("Video play failed", e));
-        } else if (width < 768) {
-            setTimeout(() => { if (!windowLoadFired) fadeOutPreloader(); }, MAX_PRELOADER_DISPLAY_TIME);
-        } else {
-            setTimeout(() => { if (!windowLoadFired) fadeOutPreloader(); }, MAX_PRELOADER_DISPLAY_TIME);
+        if (videoRef.current) {
+            videoRef.current.play().catch(e => {
+                console.error("Video play failed", e);
+                // Fallback: still hide preloader after MAX time
+                setTimeout(() => { if (!windowLoadFired) fadeOutPreloader(); }, MAX_PRELOADER_DISPLAY_TIME);
+            });
         }
+        
+        // ✅ Always set a MAX timeout fallback (desktop + mobile)
+        setTimeout(() => { if (!windowLoadFired) fadeOutPreloader(); }, MAX_PRELOADER_DISPLAY_TIME);
+        
   
         return () => window.removeEventListener('load', handleWindowLoad);
     }, [width]);
