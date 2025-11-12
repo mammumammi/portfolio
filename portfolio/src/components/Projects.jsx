@@ -9,6 +9,10 @@ import india from '../assets/india.svg';
 import smile from '../assets/smile.svg';
 import nuGame from '../assets/nu.svg';
 import brain from '../assets/brain.svg';
+import ae from '../assets/ae.png';
+import nftree from '../assets/Nftree.png';
+import price from '../assets/price.png';
+import crypto from '../assets/crypto.png';
 
 import { useGSAP } from '@gsap/react';
 import { animateWithGsapTimeline } from './animation';
@@ -42,6 +46,28 @@ const Projects = () => {
     vid:'https://res.cloudinary.com/ddbkg48oy/video/upload/v1751513859/Screen_Recording_2025-07-03_at_9.04.46_AM_fdhsfo.mov',
     logo:brainwave
   },{
+    title:'Nftree - Tree Marketplace',
+    content:'A Dynamic Realtime trackable NFT for growing trees Marketplace based on Web3.NFTree aims to promote agriculture in India by promoting People to buy NFTs that are linked to the value of the tree they represent and when the tree hits its yield season,the NFT owners get a share of the profit as well',
+    repo:'https://github.com/Harishankarc/NFTree',
+    techStack:['HTML','CSS','JS','NextJs','Solidity','Bnb Chain'],
+    webLink:'https://nftreehub.netlify.app/',
+    vid:'https://res.cloudinary.com/ddbkg48oy/video/upload/v1762951594/Screen_Recording_2025-11-12_at_6.15.58_PM_beky7a.mov',
+    logo:nftree
+  },{
+    title:'Interactive Pricing Component',
+    content:'An Interactive Pricing Component that has a theme changeable button implemented in it.The project is based on A Frontend Mentor challenge',
+    repo:'https://github.com/mammumammi/InvstoTask',
+    webLink:'https://invsto-task-rust.vercel.app/',
+    techStack:['HTMl','CSS','JS','ReactJS'],
+    logo:price
+  },{
+    title:'Crypto Intelligence Dashboard',
+    content:'A Crypto Intelligence Dashboard which tracks large whale movements across several blockchains and summarizes them,Updates about major blockchains Crypto Live prices and their comparison between their previous prices are tracked as well',
+    techStack:['HTML','CSS','JS','ReactJS','Firestore','Firebase'],
+    webLink:'https://spacenosproject.onrender.com/summarize',
+    repo:'https://github.com/mammumammi/SpacenosProject',
+    logo:crypto
+  },{
     title:'Code-A-Flag',
     content:'A winning project which uses turtle animation library in python for animating The Indian Flag as part of the competition for Tinkerhub CUCEK chapter,Code-A-Flag contest',
     techStack:['Python','Turtle Library'],
@@ -65,6 +91,14 @@ const Projects = () => {
     repo:'https://github.com/mammumammi/NuGame',
     vid:'https://res.cloudinary.com/ddbkg48oy/video/upload/v1751514250/Screen_Recording_2025-07-03_at_9.13.22_AM_hmyvnb.mov',
     logo:nuGame
+  },{
+    title:'AnyEarn',
+    content:'A Blockchain Powered Gig Marketplace where anyone can earn by doing services or create services of utmost importance to them.What makes AnyEarn different is its ease of access and topnotch security.It featues a two factor authentication for service acceptance and creatance with Photo verification by users.This project was submitted to Flow ForteHacks 2025,EthGlobal 2025',
+    techStack:['HTML','CSS','JS','NextJS','Solidity','MapBox API','Flow EVM'],
+    webLink:'https://forte-hacks-any-earn-nextjs.vercel.app/',
+    repo:'https://github.com/mammumammi/ForteHacks-AnyEarn',
+    vid:'https://res.cloudinary.com/ddbkg48oy/video/upload/v1762951117/Screen_Recording_2025-10-31_at_11.10.14_PM_lnn51s.mov',
+    logo:ae
   },{
     title:'BrainCode',
     content:' AI/ML Ideathon landing page using React, Tailwind CSS, and deployed it on Netlify. The site promotes a college-level AI/ML event with sections like event overview, timeline, FAQs, and organizer details. I also integrated a chatbot powered by IBM Watsonx to assist users with common queries, enhancing engagement and support. This project showcases my skills in building responsive, user-focused web applications using modern tools.',
@@ -277,7 +311,7 @@ const Projects = () => {
 
 
 
-            <div className='md:w-full md:opacity-0 projcar   text-white absolute md:top-[70%] md:left-0 top-[0%] left-[7.5vw] z-20  ' >
+            <div className='md:w-full md:opacity-0 projcar   text-white absolute md:top-[73%] md:left-0 top-[0%] left-[7.5vw] z-20  ' >
               <div className='md:w-[70vw] w-[85vw]   md:m-auto rounded-3xl  overflow-x-auto gap-6 px-4  mx-auto md:h-[30vh] h-[20vh] overflow-y-auto md:overflow-y-none whitespace-nowrap md:space-x-8  md:space-y-0 scrollbar-hide bg-black/75 shadow-[0_0_50px_5px_rgba(255,255,255,0.59)] my-10 relative positioned ' >
 
               { <span className='align-middle inline-block h-full'></span>}
@@ -292,7 +326,7 @@ const Projects = () => {
                 <p className='absolute text-center w-full top-[4%] normText text-[16px] opacity-0 group-hover:opacity-100 group-hover:blur-none z-10 font-[1000] duration-300 '>{item.title}</p>
                   
                      
-                <img src={item.logo} alt="" className='md:w-[8vw] w-[12vw] md:h-auto flex m-auto items-center justify-center group-hover:blur-[2px] duration-300 relative h-full ' />
+                <img src={item.logo} alt="" className='rounded-[20%] md:w-[8vw] w-[12vw] md:h-auto flex m-auto items-center justify-center group-hover:blur-[2px] duration-300 relative h-full ' />
             
                 
         </div>
