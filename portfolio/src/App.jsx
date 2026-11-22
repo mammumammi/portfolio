@@ -49,6 +49,7 @@ const App = () => {
             setTimeout(() => {
                 if (!preloaderContainerRef.current) {
                     setShowPreloader(false);
+                    setIsAnimationReady(true);
                     return;
                 }
                 gsap.to(preloaderContainerRef.current, {
@@ -91,7 +92,12 @@ const App = () => {
             }, finalDelay);
         };
         
-        window.addEventListener('load', handleWindowLoad);
+        if (document.readyState === 'complete') {
+            windowLoadFired = true;
+            fadeOutPreloader();
+        } else {
+            window.addEventListener('load', handleWindowLoad);
+        }
       
         if (videoRef.current) {
             videoRef.current.play().catch(e => {

@@ -10,26 +10,25 @@ import { div } from 'framer-motion/client';
 const Footer = () => {
     const [width, setWidth] = useState(window.innerWidth);
 
+    
     const socialhandles = [
         {
-            image:wp,
-            title:'Whatsapp',
-            link:'https://wa.link/91lxl1'
+            image: wp,
+            title: 'Whatsapp',
+            link: 'https://wa.link/91lxl1'
         },
         {
-            image:fb,
-            title:'FaceBook',
-            link:'https://www.facebook.com/ashin.mohammed.98'
+            image: fb,
+            title: 'FaceBook',
+            link: 'https://www.facebook.com/ashin.mohammed.98'
         },
         {
-            image:insta,
-            title:'Instagram',
-            link:'https://www.instagram.com/mammu__ok/'
+            image: insta,
+            title: 'Instagram',
+            link: 'https://www.instagram.com/mammu__ok/'
         },
-        
+    ];
 
-
-    ]
     const socialhandles2 = [
         {
             image:x,
@@ -44,7 +43,7 @@ const Footer = () => {
         {
             image:linkedin,
             title:'LinkedIn',
-            link:'https://www.linkedin.com/in/aashin-mohammed-a-z-9b06b7273/'
+            link:'https://www.linkedin.com/in/aashin-mohammed-a-z'
         }
     ]
   return (
@@ -73,7 +72,7 @@ const Footer = () => {
       {/* Social Media */}
       <div className="rows2 flex flex-col space-y-5 md:flex-1">
         <p className="mb-5">Social Media</p>
-        {socialhandles.map((item, id) => (
+        {(socialhandles || []).map((item, id) => (
           <a
             key={id}
             href={item.link}

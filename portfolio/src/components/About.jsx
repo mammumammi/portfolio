@@ -170,7 +170,7 @@ const About = () => {
         </div>
         {width < 768 ? <div className={`me text-5xl  eduhead flex items-center justify-center my-12  ${width<768? 'opacity-0':''}`}>Education</div> : null}
         <div className={`normText text-[15px] text-newgrey md:text-xl   md:mr-5 edu ${width<768? 'opacity-0 ':''}`}  >B.Tech Computer Science And Engineering<br />
-        Cochin University Of Science And Technology,Kochi <br />2023-2027<br />CGPA:9.05<br/>Semester 4<br/><br/>Alan Feldman Public School,Thiruvananthapuram<br/>2020<br/>High School Education<br/>93.4%<br/><br/>St Antony's Public School,Kanjirapally,Kottayam<br/>2021-2022<br/>Higher Secondary School Education<br/>89.4%
+        Cochin University Of Science And Technology,Kochi <br />2023-2027<br />CGPA:9.28<br/>Semester 7<br/><br/>Alan Feldman Public School,Thiruvananthapuram<br/>2020<br/>High School Education<br/>93.4%<br/><br/>St Antony's Public School,Kanjirapally,Kottayam<br/>2021-2022<br/>Higher Secondary School Education<br/>89.4%
         </div>
         </div>
         </div>
@@ -181,7 +181,7 @@ const About = () => {
         <div className='h-full md:py-[50px]   md:-mt-[150px] -mt-0'>
         <header className='me md:text-5xl text-4xl flex items-center justify-center  contact opacity-0 mt-10 md:mt-0'>contact me</header>
         <div className='flex flex-row space-x-6 items-center justify-center mt-5 glow contact1 opacity-0'>
-            <a className='normText' href='https://wa.link/91lxl1' target='_blank'>Whatsapp</a>
+            <a className='normText' href='https://x.com/mohammed_ashin' target='_blank'>X</a>
             <a className='normText' href='https://www.linkedin.com/in/aashin-mohammed-a-z-9b06b7273' target='_blank'>LinkedIn</a>
             <a className='normText' href='https://github.com/mammumammi' target='_blank'>Github</a>
             
